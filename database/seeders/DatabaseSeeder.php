@@ -10,6 +10,7 @@ use Database\Seeders\AlumnoSeeder;
 use Database\Seeders\MateriaSeeder;
 use Database\Seeders\NoticiaSeeder;
 use Database\Seeders\AlumnoMateriaSeeder;
+use Database\Seeders\JustificantesSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,5 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(MateriaSeeder::class);
         $this->call(AlumnoMateriaSeeder::class);
+        $this->call(JustificantesSeeder::class);
+
     }
 }
