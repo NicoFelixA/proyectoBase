@@ -23,7 +23,7 @@
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini sidebar-collapse">
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-dark border-bottom-0" style="background-color: #065698;">
+        <nav class="main-header navbar navbar-expand navbar-dark border-bottom-0" style="background-color: #b8b4b4;">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
               <li class="nav-item">
