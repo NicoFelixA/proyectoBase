@@ -1,12 +1,12 @@
 @extends('app')
 
 @section('titulo')
-    <h1>Registrar Justificante</h1>
+    <h1>Registrar pases de salida</h1>
 @stop
 
 @section('breadcrum')
     <li class="breadcrumb-item"><a href="{{ url('/home') }}">Inicio</a></li>
-    <li class="breadcrumb-item active">Registrar Justificante</li>
+    <li class="breadcrumb-item active">Registrar pases de salida</li>
 @stop
 
 @section('contenido')
@@ -16,12 +16,8 @@
             <input type="text" class="form-control">
         </div>
         <div class="form-group">
-            <label for="">Fecha falta</label>
-            <input type="date" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="">Fecha hasta</label>
-            <input type="date" class="form-control">
+            <label for="">Hora de salida</label>
+            <input type="dateTime" class="form-control">
         </div>
         <div class="form-group">
             <label for="">Motivos</label>

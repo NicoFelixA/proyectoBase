@@ -189,9 +189,9 @@
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-users""></i>
+                    <i class="nav-icon fas fa-users"></i>
                     <p>
-                       Alumnos
+                       Justificantes
                       <i class="fas fa-angle-left right"></i>
                     </p>
                   </a>
@@ -212,21 +212,21 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                      <i class="nav-icon fas fa-tools""></i>
+                      <i class="nav-icon fas fa-tools"></i>
                       <p>
-                         Otro menu
+                          Pases de salida
                         <i class="fas fa-angle-left right"></i>
                       </p>
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="{{asset('')}}" class="nav-link">
+                        <a href="{{asset('/alumno/consultarPases')}}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Consultar</p>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="{{asset('')}}" class="nav-link">
+                        <a href="{{asset('/alumno/registrarPases')}}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Registrar</p>
                         </a>

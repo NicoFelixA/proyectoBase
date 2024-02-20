@@ -14,10 +14,19 @@ class AlumnoController extends Controller
 
         return view('alumno.consultar', compact('alumnos'));
     }
+    public function consultarPases(){
+        $alumnos = Alumno::all();
+
+        return view('alumno.consultarPases', compact('alumnos'));
+    }
 
     public function registrar(){
         //consultas el alumno
         return view('alumno.registrar');
+    }
+    public function registrarPases(){
+        //registrar el alumno
+        return view('alumno.registrarPases');
     }
 
     public function reportePdf(){
