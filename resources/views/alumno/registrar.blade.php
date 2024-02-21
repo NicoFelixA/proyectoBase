@@ -10,22 +10,23 @@
 @stop
 
 @section('contenido')
-    <form action="">
+    <form action="{{ url('guardarJustificante') }}" method="POST">
+        @csrf
         <div class="form-group">
             <label for="">Nombre</label>
-            <input type="text" class="form-control">
+            <input name="nombre" type="text" class="form-control">
         </div>
         <div class="form-group">
             <label for="">Fecha falta</label>
-            <input type="date" class="form-control">
+            <input name="fecha_falta"type="date" class="form-control">
         </div>
         <div class="form-group">
             <label for="">Fecha hasta</label>
-            <input type="date" class="form-control">
+            <input name="fecha_hasta" type="date" class="form-control">
         </div>
         <div class="form-group">
             <label for="">Motivos</label>
-            <input type="text" class="form-control">
+            <input  name="motivos" type="text" class="form-control">
         </div>
         <div>
             <button type="submit" class="btn btn-primary">Guardar</button>

@@ -12,6 +12,8 @@ use Database\Seeders\NoticiaSeeder;
 use Database\Seeders\AlumnoMateriaSeeder;
 use Database\Seeders\JustificantesSeeder;
 use Database\Seeders\PasesSeeder;
+use Database\Seeders\MisJustificantesSeeder;
+use Database\Seeders\MisPasesSeeder;
 
 
 class DatabaseSeeder extends Seeder
@@ -32,6 +34,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AlumnoMateriaSeeder::class);
         $this->call(JustificantesSeeder::class);        
         $this->call(PasesSeeder::class);
+        $this->call(MisJustificantesSeeder::class);
+        $this->call(MisPasesSeeder::class);
 
 
     }

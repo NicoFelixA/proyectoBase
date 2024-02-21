@@ -6,20 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reporte PDF Generico</title>
     <style>
-        .container {
-            display: flex;
-            justify-content: space-between;
-            max-width: 800px; /* Ancho máximo del contenedor */
-            margin: 0 auto; /* Centra el contenedor */
-        }
-        .col-6 {
-            flex: 0 0 48%; /* Establece el ancho de cada columna */
-        }
-        /* Puedes ajustar el ancho de la imagen según sea necesario */
-        .col-6 img {
-            max-width: 100%;
-            height: auto;
-        }
     </style>
 </head>
 <body>
