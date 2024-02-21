@@ -27,6 +27,9 @@ return new class extends Migration
             $table->string('nombre_completo');
             $table->string('CURP');
             $table->string('sexo');
+            $table->date('fecha_falta');
+            $table->date('fecha_hasta');
+            $table->dateTime('fecha_salida');
 
             $table->timestamps();
             $table->softDeletes();

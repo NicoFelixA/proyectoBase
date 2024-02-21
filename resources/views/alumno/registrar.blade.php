@@ -10,7 +10,7 @@
 @stop
 
 @section('contenido')
-    <form action="{{ url('guardarJustificante') }}" method="POST">
+    <form action="{{ route('guardarJustificante') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="">Nombre</label>

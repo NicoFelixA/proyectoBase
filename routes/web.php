@@ -41,7 +41,7 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
     Route::get('/alumno/registrar', [AlumnoController::class, 'registrar']);
     Route::get('/alumno/registrarPases', [AlumnoController::class, 'registrarPases']);
     Route::get('/reporte/pdf', [AlumnoController::class, 'reportePdf']);
-
+    Route::delete('/elemento/{id}', [AlumnoController::class, 'eliminar'])->name('elemento.eliminar');
     Route::get('/reporte/pdf/{id}', [AlumnoController::class, 'reporteAlumnoPdf']);
 
     //Rutas de administrador
@@ -50,7 +50,7 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
     //Ruta de ejemplo para obtener detalle de calificacion
     Route::get('alumno/materias', [AlumnoController::class, 'materias']);
     Route::get('generarQR', [AlumnoController::class, 'generaQR']);
-    Route::post('guardarJustificante', [JustificanteController::class, 'guardarJustificante']);
+    Route::post('guardarJustificante', [JustificanteController::class, 'guardarJustificante'])->name('guardarJustificante');
 });
 
 Route::group(['prefix' => 'alumno','middleware' => ['alumno', 'role:alumno']], function() {

@@ -28,6 +28,14 @@ class AlumnoController extends Controller
         //registrar el alumno
         return view('alumno.registrarPases');
     }
+    public function eliminar($id)
+    {
+        // Lógica para eliminar un alumno
+        $alumno = Alumno::findOrFail($id);
+        $alumno->delete();
+
+        return redirect()->back()->with('success', 'Alumno eliminado correctamente');
+    }
 
     public function reportePdf(){
         $alumnos = array("Alumno1", "Alumno2", "Alumno3"); //DAtos de la base de datos

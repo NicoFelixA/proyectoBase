@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateMisPasesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,16 +15,12 @@ return new class extends Migration
     {
         Schema::create('mis_pases', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->string("nombre");
-            $table->string("grupo");
-            $table->dateTime("salida");
-            $table->string("motivos");
-
-            $table->timestamps();
+            $table->timestamps(); // This line adds created_at and updated_at columns
+            $table->string('nombre');
+            $table->string('grupo');
+            $table->dateTime('salida');
+            $table->string('motivos');
             $table->softDeletes();
-
-
         });
     }
 
@@ -37,4 +33,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('mis_pases');
     }
-};
+}
