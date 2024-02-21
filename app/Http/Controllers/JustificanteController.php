@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\MisJustificantes;
+use App\Models\Alumno; 
 use Illuminate\Http\Request;
 
 class JustificanteController extends Controller
@@ -15,5 +16,8 @@ class JustificanteController extends Controller
         ]);
         return redirect('/home');
     }
-    
+    public function consultar(){
+        $alumnos = Alumno::all();
+        return view('alumno.consultar', compact('alumnos'));
+    }        
 }

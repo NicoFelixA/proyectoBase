@@ -34,7 +34,7 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
     Route::get('/home', [HomeController::class, 'home']);
 
     //Rutas de alumnos
-    Route::get('/consultar', [Controller::class, 'consultar']);
+    Route::get('/consultar', [JustificanteController::class, 'consultar']);
     Route::get('/alumno/consultar', [AlumnoController::class, 'consultar']);
     Route::get('/consultarPases', [AlumnoController::class, 'consultarPases']);
     Route::get('/alumno/consultarPases', [AlumnoController::class, 'consultarPases']);

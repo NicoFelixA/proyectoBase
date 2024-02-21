@@ -137,7 +137,7 @@
           <!-- Brand Logo -->
           <a href="{{asset('/home')}}" class="brand-link">
             <img src="{{ url('images/AdminLTELogo.png') }}" alt="baessh" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Justificantes y pases de salida</span>
+            <span class="brand-text font-weight-light">Permisos escolares</span>
           </a>
 
           <!-- Sidebar -->
@@ -191,7 +191,7 @@
                   <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-users""></i>
                     <p>
-                       Alumnos
+                       Justificantes
                       <i class="fas fa-angle-left right"></i>
                     </p>
                   </a>
@@ -214,7 +214,7 @@
                     <a href="#" class="nav-link">
                       <i class="nav-icon fas fa-tools""></i>
                       <p>
-                         Otro menu
+                         Pases de salida
                         <i class="fas fa-angle-left right"></i>
                       </p>
                     </a>

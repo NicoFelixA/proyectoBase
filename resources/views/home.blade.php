@@ -1,7 +1,8 @@
-@extends('app')
+@extends('appAdmin')
 
 @section('home')
-    <h5 class="mb-2" style="text-align: center; background-color: rgb(141, 20, 20); padding: 40px; color: white; font-size: 40px"   >Centro De Estudios Tecnológicos Industrial Y De Servicios No.107</h5><br><br>
+    <h5 class="mb-2" style="text-align: center; background-color: rgb(141, 20, 20); padding: 40px; color: white; font-size: 40px"   >Centro De Estudios Tecnológicos Industrial Y De Servicios No.107</h5><br>
+    <h4 style="text-align: center">Bienvenido orientador</h4>
     <div class="">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
