@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Permisos escolares </title>
+  <title>Permisos escolares</title>
   <link rel="icon" type="image/x-icon" href="{{ url('images/logohb.ico') }}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -135,7 +135,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar elevation-4 sidebar-light-warning">
           <!-- Brand Logo -->
-          <a href="{{asset('/home')}}" class="brand-link">
+          <a href="{{asset('/alumno/home')}}" class="brand-link">
             <img src="{{ url('images/AdminLTELogo.png') }}" alt="baessh" class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Permisos escolares </span>
           </a>
@@ -180,7 +180,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item active">
-                  <a href="{{asset('/home')}}" class="nav-link">
+                  <a href="{{asset('/homeAlumno')}}" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                       Inicio
@@ -197,13 +197,13 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="{{asset('/consultar')}}" class="nav-link">
+                      <a href="{{url('/alumno/consultaralumno')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Consultar</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{{asset('/registrar')}}" class="nav-link">
+                      <a href="{{url('/alumno/registraralumno')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Registrar</p>
                       </a>
@@ -220,13 +220,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="{{asset('/consultarPases')}}" class="nav-link">
+                        <a href="{{url('/alumno/consultarpasesalumno')}}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Consultar</p>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="{{asset('/registrarPases')}}" class="nav-link">
+                        <a href="{{url('/alumno/registrarpasesalumnno')}}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Registrar</p>
                         </a>

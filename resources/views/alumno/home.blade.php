@@ -32,10 +32,10 @@
       </div>
     </div><br><br>
     <div class="row" style="text-align: center">
-      <div class='col-6' style="border-radius: 5px; border: 1px solid black; " onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='white'" ><a href="{{ asset('/consultar') }}" style="text-decoration: none; color:black">Justificantes</a>
+      <div class='col-6' style="border-radius: 5px; border: 1px solid black; " onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='white'" ><a href="{{ url('/alumno/consultaralumno') }}" style="text-decoration: none; color:black">Justificantes</a>
 
       </div>
-      <div class="col-6" style="border-radius: 5px; border: 1px solid black; " onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='white'" > <a href="{{ asset('/consultarPases') }}" style="text-decoration: none; color:black">Pases de Salida</a></div>
+      <div class="col-6" style="border-radius: 5px; border: 1px solid black; " onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='white'" > <a href="{{ url('/alumno/consultarpasesalumno') }}" style="text-decoration: none; color:black">Pases de Salida</a></div>
     </div>
               </div>
         </div>

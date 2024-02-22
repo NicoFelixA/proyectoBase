@@ -12,21 +12,37 @@ class AlumnoController extends Controller
     public function consultar(){
         $alumnos = Alumno::all();
 
-        return view('alumno.consultar', compact('alumnos'));
+        return view('administrador.consultar', compact('alumnos'));
+    }
+    public function consultaralumno(){
+
+        return view('alumno.consultaralumno');
     }
     public function consultarPases(){
         $alumnos = Alumno::all();
 
-        return view('alumno.consultarPases', compact('alumnos'));
+        return view('administrador.consultarPases', compact('alumnos'));
+    }
+    public function consultarpasesalumno(){
+
+        return view('alumno.consultarpasesalumno');
     }
 
     public function registrar(){
         //consultas el alumno
-        return view('alumno.registrar');
+        return view('administrador.registrar');
+    }
+    public function registraralumno(){
+        //consultas el alumno
+        return view('alumno.registraralumno');
     }
     public function registrarPases(){
         //registrar el alumno
-        return view('alumno.registrarPases');
+        return view('administrador.registrarPases');
+    }
+    public function registrarpasesalumno(){
+        //registrar el alumno
+        return view('alumno.registrarpasesalumno');
     }
     public function eliminar($id)
     {

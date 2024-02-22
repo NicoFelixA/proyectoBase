@@ -27,19 +27,18 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::group(['middleware' => ['admin', 'role:admin']], function() {
+    Route::get('/home', function () {
+        return view('administrador.home');
+    });
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/home', [HomeController::class, 'home']);
-
     //Rutas de alumnos
-    Route::get('/consultar', [JustificanteController::class, 'consultar']);
-    Route::get('/alumno/consultar', [AlumnoController::class, 'consultar']);
-    Route::get('/consultarPases', [AlumnoController::class, 'consultarPases']);
-    Route::get('/alumno/consultarPases', [AlumnoController::class, 'consultarPases']);
-    Route::get('/alumno/registrar', [AlumnoController::class, 'registrar']);
-    Route::get('/alumno/registrarPases', [AlumnoController::class, 'registrarPases']);
+    Route::get('/administrador/consultar', [AlumnoController::class, 'consultar']);
+    Route::get('/administrador/consultarPases', [AlumnoController::class, 'consultarPases']);
+    Route::get('/administrador/registrar', [AlumnoController::class, 'registrar']);
+    Route::get('/administrador/registrarPases', [AlumnoController::class, 'registrarPases']);
     Route::get('/reporte/pdf', [AlumnoController::class, 'reportePdf']);
     Route::delete('/elemento/{id}', [AlumnoController::class, 'eliminar'])->name('elemento.eliminar');
     Route::get('/reporte/pdf/{id}', [AlumnoController::class, 'reporteAlumnoPdf']);
@@ -54,9 +53,20 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
 });
 
 Route::group(['prefix' => 'alumno','middleware' => ['alumno', 'role:alumno']], function() {
-    Route::get('/home', function () {
+    Route::get('alumno/home', function () {
         return view('alumno.home');
     });
+    Route::get('/alumno/consultaralumno', [AlumnoController::class, 'consultaralumno']);
+    Route::get('/alumno/consultarpasesalumno', [AlumnoController::class, 'consultarpasesalumno']);
+    Route::get('/alumno/registraralumno', [AlumnoController::class, 'registraralumno']);
+    Route::get('/alumno/registrarpasesalumno', [AlumnoController::class, 'registrarpasesalumno']);
+    Route::get('/reporte/pdf', [AlumnoController::class, 'reportePdf']);
+    Route::delete('/elemento/{id}', [AlumnoController::class, 'eliminar'])->name('elemento.eliminar');
+    Route::get('/reporte/pdf/{id}', [AlumnoController::class, 'reporteAlumnoPdf']);
+    Route::get('generarQR', [AlumnoController::class, 'generaQR']);
+    Route::post('guardarJustificante', [JustificanteController::class, 'guardarJustificante'])->name('guardarJustificante');
+    Route::get('/homeAlumno ', [HomeController::class, 'homeAlumno   ']);
+
 });
 
 require __DIR__.'/auth.php';
