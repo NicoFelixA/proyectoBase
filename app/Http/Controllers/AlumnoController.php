@@ -15,8 +15,9 @@ class AlumnoController extends Controller
         return view('administrador.consultar', compact('alumnos'));
     }
     public function consultaralumno(){
+        $alumnos = Alumno::all();
 
-        return view('alumno.consultaralumno');
+        return view('alumno.consultaralumno', compact('alumnos'));
     }
     public function consultarPases(){
         $alumnos = Alumno::all();
@@ -65,6 +66,13 @@ class AlumnoController extends Controller
         PDF::SetPaper('A4', 'landscape'); //Configuracion de la libreria
         $pdf = PDF::loadView('PDF.reporteAlumno', array('alumno' => $alumno)); //Carga la vista y la convierte a PDF
         return $pdf->download("reporteAlumno".$alumno->id.".pdf"); //Descarga el PDF con ese nombre
+    }
+
+    public function reporteAlumnoPdfPase($id){
+        $alumno = Alumno::find($id);
+        PDF::SetPaper('A4', 'landscape'); //Configuracion de la libreria
+        $pdf = PDF::loadView('PDF.reportePases', array('alumno' => $alumno)); //Carga la vista y la convierte a PDF
+        return $pdf->download("reportePases".$alumno->id.".pdf"); //Descarga el PDF con ese nombre
     }
 
     public function materias(){

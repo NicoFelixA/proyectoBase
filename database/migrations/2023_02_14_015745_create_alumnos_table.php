@@ -30,6 +30,8 @@ return new class extends Migration
             $table->date('fecha_falta');
             $table->date('fecha_hasta');
             $table->dateTime('fecha_salida');
+            $table->string('motivos');
+
 
             $table->timestamps();
             $table->softDeletes();

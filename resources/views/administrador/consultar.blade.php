@@ -1,4 +1,4 @@
-@extends('app')
+@extends('appAdmin')
 
 @section('titulo')
     <h1>Consultar Justificantes</h1>

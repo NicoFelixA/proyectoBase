@@ -135,9 +135,9 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar elevation-4 sidebar-light-warning">
           <!-- Brand Logo -->
-          <a href="{{asset('/administrador/home')}}" class="brand-link">
+          <a href="{{asset('/home')}}" class="brand-link">
             <img src="{{ url('images/AdminLTELogo.png') }}" alt="baessh" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Permisos escolares 1</span>
+            <span class="brand-text font-weight-light">Permisos escolares</span>
           </a>
 
           <!-- Sidebar -->
@@ -180,7 +180,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item active">
-                  <a href="{{asset('/homeAdmin')}}" class="nav-link">
+                  <a href="{{asset('/home')}}" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                       Inicio

@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 use App\Models\MisJustificantes;
-use App\Models\Alumno; 
 use Illuminate\Http\Request;
 
 class JustificanteController extends Controller
 {
     public function guardarJustificante(Request $datos){
+        dd($datos->all());
+
         MisJustificantes::create([ 
-            'nombre'        =>$datos->input('nombre'),
-            'fecha_falta'   =>"2024-02-20 02:40",
-            'fecha_hasta'   =>"2024-02-20 02:40",
-            'motivos'       =>"Mal estar"
+            'nombre'        => $datos->input('nombre'),
+            'grupo'         => $datos->input('grupo'),
+            'fecha_falta'   => $datos->input('fecha_falta'),
+            'fecha_hasta'   => $datos->input('fecha_hasta'),
+            'motivos'       => $datos->input('motivos')
         ]);
         return redirect('/home');
     }
-    public function consultar(){
-        $alumnos = Alumno::all();
-        return view('alumno.consultar', compact('alumnos'));
-    }        
 }

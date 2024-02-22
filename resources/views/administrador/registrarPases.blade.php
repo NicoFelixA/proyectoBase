@@ -1,4 +1,4 @@
-@extends('app')
+@extends('appAdmin')
 
 @section('titulo')
     <h1>Registrar pases de salida</h1>

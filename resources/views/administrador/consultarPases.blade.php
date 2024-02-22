@@ -1,4 +1,4 @@
-@extends('app')
+@extends('appAdmin')
 
 @section('titulo')
     <h1>Consultar pases de salida</h1>
@@ -45,7 +45,7 @@
                     </td>
                     <td>
                         <!-- Reporte PDF -->
-                        <a href="{{ url('reporte/pdf') }}/{{ $a->id }}" class="btn btn-secondary btn-sm">
+                        <a href="{{ url('reporte/pdfPase') }}/{{ $a->id }}" class="btn btn-secondary btn-sm">
                             <i class="far fa-file-pdf"></i>
                         </a></form>
                     </td>

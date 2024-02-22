@@ -42,21 +42,21 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
     Route::get('/reporte/pdf', [AlumnoController::class, 'reportePdf']);
     Route::delete('/elemento/{id}', [AlumnoController::class, 'eliminar'])->name('elemento.eliminar');
     Route::get('/reporte/pdf/{id}', [AlumnoController::class, 'reporteAlumnoPdf']);
-
+    Route::get('/reporte/pdfPase/{id}', [AlumnoController::class, 'reporteAlumnoPdfPase']);
+    Route::post('guardarJustificante', [JustificanteController::class, 'guardarJustificante'])->name('guardarJustificante');
     //Rutas de administrador
     Route::get('/homeAdministrador', [HomeController::class, 'homeAdministrador']);
 
     //Ruta de ejemplo para obtener detalle de calificacion
     Route::get('alumno/materias', [AlumnoController::class, 'materias']);
     Route::get('generarQR', [AlumnoController::class, 'generaQR']);
-    Route::post('guardarJustificante', [JustificanteController::class, 'guardarJustificante'])->name('guardarJustificante');
 });
 
 Route::group(['prefix' => 'alumno','middleware' => ['alumno', 'role:alumno']], function() {
-    Route::get('alumno/home', function () {
+    Route::get('/home', function () {
         return view('alumno.home');
     });
-    Route::get('/alumno/consultaralumno', [AlumnoController::class, 'consultaralumno']);
+    Route::get('/alumno/consultaralumno', [AlumnoController::class, 'consultaralumno'])->name('consultaralumno');
     Route::get('/alumno/consultarpasesalumno', [AlumnoController::class, 'consultarpasesalumno']);
     Route::get('/alumno/registraralumno', [AlumnoController::class, 'registraralumno']);
     Route::get('/alumno/registrarpasesalumno', [AlumnoController::class, 'registrarpasesalumno']);
@@ -64,9 +64,10 @@ Route::group(['prefix' => 'alumno','middleware' => ['alumno', 'role:alumno']], f
     Route::delete('/elemento/{id}', [AlumnoController::class, 'eliminar'])->name('elemento.eliminar');
     Route::get('/reporte/pdf/{id}', [AlumnoController::class, 'reporteAlumnoPdf']);
     Route::get('generarQR', [AlumnoController::class, 'generaQR']);
-    Route::post('guardarJustificante', [JustificanteController::class, 'guardarJustificante'])->name('guardarJustificante');
-    Route::get('/homeAlumno ', [HomeController::class, 'homeAlumno   ']);
+    Route::post('/alumno/guardarJustificante', [JustificanteController::class, 'guardarJustificante'])->name('guardarJustificante');
+    Route::get('/home', [HomeController::class, 'home']);
 
 });
 
 require __DIR__.'/auth.php';
+

@@ -135,7 +135,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar elevation-4 sidebar-light-warning">
           <!-- Brand Logo -->
-          <a href="{{asset('/alumno/home')}}" class="brand-link">
+          <a href="{{asset('/home')}}" class="brand-link">
             <img src="{{ url('images/AdminLTELogo.png') }}" alt="baessh" class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Permisos escolares </span>
           </a>
@@ -197,13 +197,13 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="{{url('/alumno/consultaralumno')}}" class="nav-link">
+                      <a href="{{route('/alumno/consultaralumno')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Consultar</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{{url('/alumno/registraralumno')}}" class="nav-link">
+                      <a href="{{route('/alumno/registraralumno')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Registrar</p>
                       </a>
@@ -220,13 +220,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="{{url('/alumno/consultarpasesalumno')}}" class="nav-link">
+                        <a href="{{route('/alumno/consultarpasesalumno')}}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Consultar</p>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="{{url('/alumno/registrarpasesalumnno')}}" class="nav-link">
+                        <a href="{{route('/alumno/registrarpasesalumnno')}}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Registrar</p>
                         </a>

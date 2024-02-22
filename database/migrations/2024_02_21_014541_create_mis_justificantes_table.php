@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("grupo");
             $table->date("fecha_falta");
             $table->date("fecha_hasta");
-            $table->boolean("estatus");
+            $table->string("motivos");
             $table->timestamps();
 
             $table->softDeletes();

@@ -11,10 +11,10 @@
 <body>
     <div class="container">
         <div class="col-6">
-            <h1>Datos del justificante</h1><hr>
+            <h1>Datos del pase de salida</h1><hr>
             <h5>ID: {{ $alumno->id }}</h5>
             <h5>Nombre: {{ $alumno->nombre }}</h5>
-            <h5>Fecha de faltas: {{ $alumno->fecha_falta . ' al ' . $alumno->fecha_hasta }}</h5>
+            <h5>Fecha de salida: {{ $alumno->fecha_salida }}</h5>
             <h5>Motivos: {{  $alumno->motivos }}</h5>            
         </div>
         <div class="col-6">

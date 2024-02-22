@@ -1,4 +1,4 @@
-@extends('app')
+@extends('appAdmin')
 
 @section('titulo')
     <h1>Registrar Justificante</h1>
@@ -15,6 +15,10 @@
         <div class="form-group">
             <label for="">Nombre</label>
             <input name="nombre" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Grupo</label>
+            <input name="grupo" type="text" class="form-control">
         </div>
         <div class="form-group">
             <label for="">Fecha falta</label>
