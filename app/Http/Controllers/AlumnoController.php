@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use PDF;
 use App\Models\Alumno;
+use App\Models\Justificantes;
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class AlumnoController extends Controller
 {
     public function consultar(){
-        $alumnos = Alumno::all();
+        $justificantes = Justificantes::all();
 
-        return view('administrador.consultar', compact('alumnos'));
+        return view('administrador.consultar', compact('justificantes'));
     }
     public function consultaralumno(){
         $alumnos = Alumno::all();
@@ -55,30 +56,30 @@ class AlumnoController extends Controller
     }
 
     public function reportePdf(){
-        $alumnos = array("Alumno1", "Alumno2", "Alumno3"); //DAtos de la base de datos
+        $justificantes = array("Alumno1", "Alumno2", "Alumno3"); //DAtos de la base de datos
         PDF::SetPaper('A4', 'landscape'); //Configuracion de la libreria
-        $pdf = PDF::loadView('PDF.reporteGenerico', array('alumnos' => $alumnos)); //Carga la vista y la convierte a PDF
+        $pdf = PDF::loadView('PDF.reporteGenerico', array('justificantes' => $justificantes)); //Carga la vista y la convierte a PDF
         return $pdf->download("reporteGenerico.pdf"); //Descarga el PDF con ese nombre
     }
 
     public function reporteAlumnoPdf($id){
-        $alumno = Alumno::find($id);
+        $justificantes = Justificantes::find($id);
         PDF::SetPaper('A4', 'landscape'); //Configuracion de la libreria
-        $pdf = PDF::loadView('PDF.reporteAlumno', array('alumno' => $alumno)); //Carga la vista y la convierte a PDF
-        return $pdf->download("reporteAlumno".$alumno->id.".pdf"); //Descarga el PDF con ese nombre
+        $pdf = PDF::loadView('PDF.reporteAlumno', array('justificantes' => $justificantes)); //Carga la vista y la convierte a PDF
+        return $pdf->download("reporteAlumno".$justificantes->id.".pdf"); //Descarga el PDF con ese nombre
     }
 
     public function reporteAlumnoPdfPase($id){
-        $alumno = Alumno::find($id);
+        $justificantes = Justificantes::find($id);
         PDF::SetPaper('A4', 'landscape'); //Configuracion de la libreria
-        $pdf = PDF::loadView('PDF.reportePases', array('alumno' => $alumno)); //Carga la vista y la convierte a PDF
-        return $pdf->download("reportePases".$alumno->id.".pdf"); //Descarga el PDF con ese nombre
+        $pdf = PDF::loadView('PDF.reportePases', array('justificantes' => $justificantes)); //Carga la vista y la convierte a PDF
+        return $pdf->download("reportePases".$justificantes->id.".pdf"); //Descarga el PDF con ese nombre
     }
 
     public function materias(){
         //Este id de alumno lo van a sacar del Auth::user()->alumno_id
         $id=2;
-        $alumno = Alumno::with('materias')->find($id);
+        $justificantes = Justificantes::with('materias')->find($id);
 
 
         dd($alumno);

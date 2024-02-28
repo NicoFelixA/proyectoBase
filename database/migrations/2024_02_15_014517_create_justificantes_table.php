@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('alumno_id');
+            $table->string('nombre');
+            $table->string('grupo');
             $table->date('fecha_falta');
             $table->date('fecha_hasta');
             $table->string('motivos');
