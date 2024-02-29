@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Justificantes extends Model
 {
-    use HasFactory;
+    protected $fillable = ['user_id','alumno_id','nombre', 'grupo', 'fecha_falta', 'fecha_hasta', 'motivos'];
 }

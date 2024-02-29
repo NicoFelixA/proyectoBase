@@ -10,11 +10,16 @@
 @stop
 
 @section('contenido')
-    <form action="{{ route('guardarJustificante') }}" method="POST">
+    <form action="{{ url('guardar') }}" method="POST">
         @csrf
         <div class="form-group">
-            <label for="">Nombre</label>
-            <input name="nombre" type="text" class="form-control">
+            <label for="">Alumno</label>
+            <select name="alumno_id" class="form-control" id="">
+                <option value="">Selecciona un alumno:</option>
+                @foreach($alumnos as $a)
+                    <option value="{{$a->id}}">{{$a->nombre}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             <label for="">Grupo</label>

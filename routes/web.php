@@ -43,7 +43,7 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
     Route::delete('/elemento/{id}', [AlumnoController::class, 'eliminar'])->name('elemento.eliminar');
     Route::get('/reporte/pdf/{id}', [AlumnoController::class, 'reporteAlumnoPdf']);
     Route::get('/reporte/pdfPase/{id}', [AlumnoController::class, 'reporteAlumnoPdfPase']);
-    Route::post('guardarJustificante', [JustificanteController::class, 'guardarJustificante'])->name('guardarJustificante');
+    Route::post('guardar', [JustificanteController::class, 'guardarJustificante']);
     //Rutas de administrador
     Route::get('/homeAdministrador', [HomeController::class, 'homeAdministrador']);
 
@@ -64,7 +64,7 @@ Route::group(['prefix' => 'alumno','middleware' => ['alumno', 'role:alumno']], f
     Route::delete('/elemento/{id}', [AlumnoController::class, 'eliminar'])->name('elemento.eliminar');
     Route::get('/reporte/pdf/{id}', [AlumnoController::class, 'reporteAlumnoPdf']);
     Route::get('generarQR', [AlumnoController::class, 'generaQR']);
-    Route::post('/alumno/guardarJustificante', [JustificanteController::class, 'guardarJustificante'])->name('guardarJustificante');
+    Route::post('/alumno/guardarJustificante', [JustificanteController::class, 'guardarJustificante']);
     Route::get('/home', [HomeController::class, 'home']);
 
 });

@@ -6,19 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reporte PDF Generico</title>
     <style>
+        h1{
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+        }
+        .datos{
+            font-size: 20px;
+        }
+        .imagen{
+            text-align: center;
+        }
+        *{
+            margin: 15px;
+        }
+        
+        
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="col-6">
-            <h1>Datos del justificante</h1><hr>
-            <h5>ID: {{ $justificantes->id }}</h5>
-            <h5>Nombre: {{ $justificantes->nombre }}</h5>
-            <h5>Grupo: {{ $justificantes->grupo }}</h5>
-            <h5>Fecha de faltas: {{ $justificantes->fecha_falta . ' al ' . $justificantes->fecha_hasta }}</h5>
-            <h5>Motivos: {{  $justificantes->motivos }}</h5>            
+        <div class=>
+            <h1 >Centro De Estudios Tecnológicos Industrial Y De Servicios 107</h1><hr>
+            <h3 >Datos del Justificante</h3>
+            <div class="datos">
+                <p>Nombre: {{ $justificantes->nombre }}</p>
+                <p>Grupo: {{ $justificantes->grupo }}</p>
+                <p>Fecha de faltas: {{ $justificantes->fecha_falta . ' al ' . $justificantes->fecha_hasta }}</p>
+                <p>Motivos: {{  $justificantes->motivos }}</p>            
+            </div><br><br><br><br><br>
         </div>
-        <div class="col-6">
+        <div class="imagen">
             <img src="{{ asset('images/QR') }}" width="200px">
         </div>
     </div>

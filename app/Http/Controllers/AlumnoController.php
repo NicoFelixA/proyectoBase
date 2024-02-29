@@ -20,6 +20,8 @@ class AlumnoController extends Controller
 
         return view('alumno.consultaralumno', compact('alumnos'));
     }
+
+    
     public function consultarPases(){
         $alumnos = Alumno::all();
 
@@ -32,7 +34,8 @@ class AlumnoController extends Controller
 
     public function registrar(){
         //consultas el alumno
-        return view('administrador.registrar');
+        $alumnos=Alumno::all(); 
+        return view('administrador.registrar', compact('alumnos'));
     }
     public function registraralumno(){
         //consultas el alumno
