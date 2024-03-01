@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use PDF;
 use App\Models\Alumno;
 use App\Models\Justificantes;
+use App\Models\Pases;
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -23,9 +24,9 @@ class AlumnoController extends Controller
 
     
     public function consultarPases(){
-        $alumnos = Alumno::all();
+        $pases = Pases::all();
 
-        return view('administrador.consultarPases', compact('alumnos'));
+        return view('administrador.consultarPases', compact('pases'));
     }
     public function consultarpasesalumno(){
 
@@ -42,8 +43,9 @@ class AlumnoController extends Controller
         return view('alumno.registraralumno');
     }
     public function registrarPases(){
+        $alumnos=Alumno::all(); 
         //registrar el alumno
-        return view('administrador.registrarPases');
+        return view('administrador.registrarPases', compact('alumnos'));
     }
     public function registrarpasesalumno(){
         //registrar el alumno

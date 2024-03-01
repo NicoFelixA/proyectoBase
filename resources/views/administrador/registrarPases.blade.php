@@ -10,11 +10,13 @@
 @stop
 
 @section('contenido')
-    <form action="">
-        <div class="form-group">
-            <label for="">Nombre</label>
-            <input type="text" class="form-control">
-        </div>
+    <form action="{{ url('guardarPase') }}" method="POST">
+        <select name="alumno_id" class="form-control" id="">
+                <option value="">Selecciona un alumno:</option>
+                @foreach($alumnos as $a)
+                    <option value="{{$a->id}}">{{$a->nombre}}</option>
+                @endforeach
+            </select>
         <div class="form-group">
             <label for="">Hora de salida</label>
             <input type="dateTime" class="form-control">
