@@ -16,8 +16,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Grupo</th>
-                    <th>Fecha salida</th>
+                    <th>Hora salida</th>
                     <th>Opciones</th>
                     <th>Más</th>
                 </tr>
@@ -27,8 +26,8 @@
                 <tr>
                     <td>{{ $p->id }}</td>
                     <td>{{ $p->nombre }}</td>
-                    <td>{{ $p->grupo }}</td>
-                    <td>{{ $p->fecha_salida }}</td>
+                    <td>{{ $p->hora_salida }}</td>
+                    <td>{{ $p->motivos }}</td>
                     <td>
                         <form action="{{ route('elemento.eliminar', $p->id) }}" method="POST">
                             @csrf

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('alumno_id');
+            $table->string('grupo');
             $table->dateTime('hora_salida');
             $table->string('motivos');
             

@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Alumno;
 use App\Models\Pases;
-class PasesContoller extends Controller
+class PasesController extends Controller
 {
     public function guardarPase(Request $datos){
-        
         $alumno_id = $datos->input('alumno_id');
 
         // Obtener el nombre del alumno utilizando el ID
@@ -16,10 +15,9 @@ class PasesContoller extends Controller
         
         Pases::create([ 
             'user_id'       => auth()->user()->id,
-            'alumno_id'     =>  $datos->input('alumno_id'),
+            'alumno_id'     => $datos->input('alumno_id'),
             'nombre'        => $nombre_alumno,
-            'grupo'         => $datos->input('grupo'),
-            'fecha_salida'  => $datos->input('fecha_salida'),
+            'hora_salida'  => $datos->input('hora_salida'),
             'motivos'       => $datos->input('motivos')
         ]);
         return redirect('/home');

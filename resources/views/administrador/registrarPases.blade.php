@@ -10,20 +10,24 @@
 @stop
 
 @section('contenido')
-    <form action="{{ url('guardarPase') }}" method="POST">
+    <form action="{{ url('guardarP') }}" method="POST">
+        @csrf
+    <div>
+        <label for="">Alumno</label>
         <select name="alumno_id" class="form-control" id="">
-                <option value="">Selecciona un alumno:</option>
-                @foreach($alumnos as $a)
-                    <option value="{{$a->id}}">{{$a->nombre}}</option>
-                @endforeach
-            </select>
+            <option value="">Selecciona un alumno:</option>
+            @foreach($alumnos as $a)
+            <option value="{{$a->id}}">{{$a->nombre}}</option>
+            @endforeach
+        </select>
+    </div> 
         <div class="form-group">
             <label for="">Hora de salida</label>
-            <input type="dateTime" class="form-control">
+            <input name="hora_salida" type="datetime-local" class="form-control">
         </div>
         <div class="form-group">
             <label for="">Motivos</label>
-            <input type="text" class="form-control">
+            <input name="motivos" type="text" class="form-control">
         </div>
         <div>
             <button type="submit" class="btn btn-primary">Guardar</button>
