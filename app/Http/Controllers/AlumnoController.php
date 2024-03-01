@@ -12,7 +12,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 class AlumnoController extends Controller
 {
     public function consultar(){
-        $justificantes = Justificantes::all();
+    $justificantes = Justificantes::with('alumno')->get();
 
         return view('administrador.consultar', compact('justificantes'));
     }

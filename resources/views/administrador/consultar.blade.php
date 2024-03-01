@@ -28,8 +28,8 @@
                 @foreach ($justificantes as $j)
 <tr>
     <td>{{ $j->id }}</td>
-    <td>{{ $j->nombre }}</td>
-    <td>{{ $j->grupo }}</td>
+    <td>{{ $j->alumno->nombre }}</td>
+    <td>{{ $j->alumno->grupo }}</td>
     <td>{{ $j->fecha_falta }}</td>
     <td>{{ $j->fecha_hasta }}</td>
     <td>{{ $j->motivos }}</td>

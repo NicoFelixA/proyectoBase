@@ -22,10 +22,6 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="">Grupo</label>
-            <input name="grupo" type="text" class="form-control">
-        </div>
-        <div class="form-group">
             <label for="">Fecha falta</label>
             <input name="fecha_falta"type="date" class="form-control">
         </div>

@@ -16,8 +16,7 @@ class PasesController extends Controller
         Pases::create([ 
             'user_id'       => auth()->user()->id,
             'alumno_id'     => $datos->input('alumno_id'),
-            'nombre'        => $nombre_alumno,
-            'hora_salida'  => $datos->input('hora_salida'),
+            'hora_salida'   => $datos->input('hora_salida'),
             'motivos'       => $datos->input('motivos')
         ]);
         return redirect('/home');

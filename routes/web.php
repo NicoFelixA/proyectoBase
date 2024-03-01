@@ -66,7 +66,6 @@ Route::group(['prefix' => 'alumno','middleware' => ['alumno', 'role:alumno']], f
     Route::delete('/elemento/{id}', [AlumnoController::class, 'eliminar'])->name('elemento.eliminar');
     Route::get('/reporte/pdf/{id}', [AlumnoController::class, 'reporteAlumnoPdf']);
     Route::get('generarQR', [AlumnoController::class, 'generaQR']);
-    Route::post('/alumno/guardarJustificante', [JustificanteController::class, 'guardarJustificante']);
     Route::get('/home', [HomeController::class, 'home']);
 
 });

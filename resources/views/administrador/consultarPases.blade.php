@@ -16,6 +16,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
+                    <th>Grupo</th>
                     <th>Hora salida</th>
                     <th>Opciones</th>
                     <th>Más</th>
@@ -25,7 +26,8 @@
                 @foreach ($pases as $p)
                 <tr>
                     <td>{{ $p->id }}</td>
-                    <td>{{ $p->nombre }}</td>
+                    <td>{{ $p->alumno->nombre }}</td>
+                    <td>{{ $p->alumno->grupo }}</td>
                     <td>{{ $p->hora_salida }}</td>
                     <td>{{ $p->motivos }}</td>
                     <td>
