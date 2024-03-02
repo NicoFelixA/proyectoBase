@@ -55,10 +55,10 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
 });
 
 Route::group(['prefix' => 'alumno','middleware' => ['alumno', 'role:alumno']], function() {
-    Route::get('/home', function () {
-        return view('alumno.home');
+    Route::get('/home1', function () {
+        return view('alumno.home1');
     });
-    Route::get('/alumno/consultaralumno', [AlumnoController::class, 'consultaralumno'])->name('consultaralumno');
+    Route::get('alumno/consultaralumno', [AlumnoController::class, 'consultaralumno']);
     Route::get('/alumno/consultarpasesalumno', [AlumnoController::class, 'consultarpasesalumno']);
     Route::get('/alumno/registraralumno', [AlumnoController::class, 'registraralumno']);
     Route::get('/alumno/registrarpasesalumno', [AlumnoController::class, 'registrarpasesalumno']);

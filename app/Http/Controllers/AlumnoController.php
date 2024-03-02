@@ -17,8 +17,7 @@ class AlumnoController extends Controller
         return view('administrador.consultar', compact('justificantes'));
     }
     public function consultaralumno(){
-        $alumnos = Alumno::all();
-
+        $misjustificantes = MisJustificantes::all();
         return view('alumno.consultaralumno', compact('alumnos'));
     }
 
