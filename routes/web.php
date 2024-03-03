@@ -48,6 +48,9 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
     Route::post('guardarP', [PasesController::class, 'guardarPase']);
     //Rutas de administrador
     Route::get('/homeAdministrador', [HomeController::class, 'homeAdministrador']);
+    Route::get('/blankpage', function () {
+        return view('blankpage');
+    });
 
     //Ruta de ejemplo para obtener detalle de calificacion
     Route::get('alumno/materias', [AlumnoController::class, 'materias']);

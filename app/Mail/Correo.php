@@ -13,6 +13,7 @@ class Correo extends Mailable
     public $subject = 'Justificante';
     public $nombre_usuario;
     public $justificante;
+    public $codigo;
 
     /**
      * Create a new message instance.
@@ -21,10 +22,12 @@ class Correo extends Mailable
      * @param mixed $justificante
      * @return void
      */
-    public function __construct($nombre_usuario, $justificante)
+    public function __construct($nombre_usuario, $justificante, $codigo)
     {
         $this->nombre_usuario = $nombre_usuario;
         $this->justificante = $justificante;
+        $this->codigo = $codigo;
+
     }
 
     /**
@@ -35,5 +38,7 @@ class Correo extends Mailable
     public function build()
     {
         return $this->view('correo');
+        return $this->view('emails.codigo_verificacion');
+
     }
 }

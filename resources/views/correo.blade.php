@@ -9,16 +9,18 @@
         .preview-message {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
-            padding: 20px;
             text-align: center;
+            padding: 20px;
+            margin-bottom: 0; /* Elimina el margen inferior */
         }
         .preview-message p {
             margin: 0;
             font-size: 16px;
             color: #333;
         }
-        h1{
+        h2{
             text-align: center;
+            color: black
         }
         h3{
             text-align: center;
@@ -32,7 +34,26 @@
         *{
             margin: 15px;
         }
-        
+        h1{
+            background-color: 	#7f1e1e;
+            color: white;
+            text-align: center;
+            margin-bottom: 0; /* Elimina el margen inferior */
+        }
+        button{
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            background-color: #5f707a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center
+        }
     </style>
 </head>
 <body>
@@ -43,15 +64,20 @@
     <div class="container">
         <div>
             <h1 >Centro De Estudios Tecnológicos Industrial Y De Servicios 107</h1><hr>
-            <h3 >Datos del Justificante</h3>
+            <h2 >Datos del Justificante</h2>
             <div class="datos">
                 <p>Nombre: {{ $justificante->alumno->nombre }}</p>
                 <p>Grupo: {{ $justificante->alumno->grupo }}</p>
                 <p>Fecha de faltas: {{ $justificante->fecha_falta . ' al ' . $justificante->fecha_hasta }}</p>
                 <p>Motivos: {{  $justificante->motivos }}</p>            
-            </div><br><br><br><br><br>
+            </div><br><br>
+        </div>
+        <div>
+            <a type="submit" class="btn btn-primary">Aceptar</a>
+            <a href="" class="btn btn-danger">Rechazar</a>
         </div>
         
     </div>
+
 </body>
 </html>

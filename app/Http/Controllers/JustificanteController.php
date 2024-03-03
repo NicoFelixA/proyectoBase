@@ -38,6 +38,14 @@ class JustificanteController extends Controller
 
     // Redireccionar con mensaje de éxito
     return redirect()->back()->with('message', 'Correo enviado correctamente');
+
+    // Generar código de verificación de 6 números
+    $codigoVerificacion = mt_rand(100000, 999999);
+
+    // Enviar correo electrónico con el código de verificación
+    Mail::to('nicolas.felix21@cetis107.edu.mx')->send(new CodigoVerificacion($codigoVerificacion));
+
+    return 'Correo enviado con éxito';
 }
 
 }
