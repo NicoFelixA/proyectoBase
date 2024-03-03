@@ -31,8 +31,8 @@
             <h1 >Centro De Estudios Tecnológicos Industrial Y De Servicios 107</h1><hr>
             <h3 >Datos del Justificante</h3>
             <div class="datos">
-                <p>Nombre: {{ $justificantes->nombre }}</p>
-                <p>Grupo: {{ $justificantes->grupo }}</p>
+                <p>Nombre: {{ $justificantes->alumno->nombre }}</p>
+                <p>Grupo: {{ $justificantes->alumno->grupo }}</p>
                 <p>Fecha de faltas: {{ $justificantes->fecha_falta . ' al ' . $justificantes->fecha_hasta }}</p>
                 <p>Motivos: {{  $justificantes->motivos }}</p>            
             </div><br><br><br><br><br>

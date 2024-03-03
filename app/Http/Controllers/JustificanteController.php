@@ -18,9 +18,8 @@ class JustificanteController extends Controller
         // Obtener el nombre del alumno utilizando el ID
         $alumno = Alumno::find($alumno_id);
         $nombre_alumno = $alumno->nombre;
-
         // Crear un nuevo justificante
-        $justificante = Justificantes::create([
+        Justificantes::create([
             'user_id'       => auth()->user()->id,
             'alumno_id'     => $datos->input('alumno_id'),
             'fecha_falta'   => $datos->input('fecha_falta'),
@@ -29,7 +28,6 @@ class JustificanteController extends Controller
         ]);
 
         // Verificar si se creó correctamente el justificante
-        if ($justificante) {
             // Generar código de verificación de 6 números
             $codigoVerificacion = mt_rand(100000, 999999);
 
@@ -48,9 +46,7 @@ class JustificanteController extends Controller
                 'codigo_verificacion'   => $codigoVerificacion
             ]);
 
-        } else {
-            // Manejar la situación en la que no se pudo crear el justificante
-            return redirect()->back()->with('message', 'Error al crear el justificante');
-        }
+            return view('correo', ['nombre' => $nombre_alumno]);
+
     }   
 }
