@@ -11,22 +11,17 @@ class Correo extends Mailable
     use Queueable, SerializesModels;
 
     public $subject = 'Justificante';
-    public $nombre_usuario;
     public $justificante;
-    public $codigo;
 
     /**
      * Create a new message instance.
      *
-     * @param string $nombre_usuario
      * @param mixed $justificante
      * @return void
      */
-    public function __construct($nombre_usuario, $justificante, $codigo)
-    {
-        $this->nombre_usuario = $nombre_usuario;
+    public function __construct($justificante)
+    {        
         $this->justificante = $justificante;
-        $this->codigo = $codigo;
 
     }
 
@@ -37,8 +32,7 @@ class Correo extends Mailable
      */
     public function build()
     {
+        // Aquí debes cambiar 'correo' por el nombre de tu vista correspondiente
         return $this->view('correo');
-        return $this->view('emails.codigo_verificacion');
-
     }
 }

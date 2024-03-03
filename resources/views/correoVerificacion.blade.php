@@ -7,6 +7,8 @@
     <title>Verificar</title>
 </head>
 <body>
-    <h1>Su código de verificación es: {{ $codigo }}</h1>
+    <h1 >Centro De Estudios Tecnológicos Industrial Y De Servicios 107</h1><hr>
+
+    <h1>Su código de verificación es: {{ $codigoVerificacion }}</h1>
 </body>
 </html>

@@ -24,15 +24,15 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($misjustificantes as $mj)
+                @foreach ($alumnos as $a)
 <tr>
-    <td>{{ $mj->id }}</td>
-    <td>{{ $mj->nombre }}</td>
-    <td>{{ $mj->grupo }}</td>
-    <td>{{ $mj->fecha_falta }}</td>
-    <td>{{ $mj->fecha_hasta }}</td>
+    <td>{{ $a->id }}</td>
+    <td>{{ $a->nombre }}</td>
+    <td>{{ $a->grupo }}</td>
+    <td>{{ $a->fecha_falta }}</td>
+    <td>{{ $a->fecha_hasta }}</td>
     <td>
-        <form action="{{ route('elemento.eliminar', $mj->id) }}" method="POST">
+        <form action="{{ route('elemento.eliminar', $a->id) }}" method="POST">
             @csrf
             @method('DELETE')
             <!-- Eliminar -->
@@ -47,7 +47,7 @@
     </td>
     <td>
         <!-- Reporte PDF -->
-        <a href="{{ url('reporte/pdf') }}/{{ $mj->id }}" class="btn btn-secondary btn-sm">
+        <a href="{{ url('reporte/pdf') }}/{{ $a->id }}" class="btn btn-secondary btn-sm">
             <i class="far fa-file-pdf"></i>
         </a></form>
     </td>

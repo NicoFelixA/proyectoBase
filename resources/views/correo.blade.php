@@ -72,10 +72,10 @@
                 <p>Motivos: {{  $justificante->motivos }}</p>            
             </div><br><br>
         </div>
-        <div>
-            <a type="submit" class="btn btn-primary">Aceptar</a>
-            <a href="" class="btn btn-danger">Rechazar</a>
-        </div>
+        <form>
+            <a href="#" type="submit" class="btn btn-primary">Aceptar</a>
+            <a href="#" class="btn btn-danger">Rechazar</a>
+        </form>
         
     </div>
 
