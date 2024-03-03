@@ -12,6 +12,7 @@ class Correo extends Mailable
 
     public $subject = 'Justificante';
     public $justificante;
+    public $alumno;
 
     /**
      * Create a new message instance.
@@ -19,9 +20,10 @@ class Correo extends Mailable
      * @param mixed $justificante
      * @return void
      */
-    public function __construct($justificante)
+    public function __construct($justificante, $alumno)
     {        
         $this->justificante = $justificante;
+        $this->alumno = $alumno;
 
     }
 

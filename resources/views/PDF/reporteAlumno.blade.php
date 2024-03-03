@@ -38,7 +38,7 @@
             </div><br><br><br><br><br>
         </div>
         <div class="imagen">
-            <img src="{{ asset('images/QR') }}" width="200px">
+            <img src="{{ asset('images/frame.png') }}" width="200px">
         </div>
     </div>
 </body>

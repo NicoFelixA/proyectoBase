@@ -57,7 +57,7 @@
     </style>
 </head>
 <body>
-    <div class="preview-message">
+    <div class="preview-message">   
         <p>Tu hijo(a) está solicitando un justificante - Abre este correo para aceptar o rechazarlo</p>
     </div>
 
@@ -66,14 +66,14 @@
             <h1 >Centro De Estudios Tecnológicos Industrial Y De Servicios 107</h1><hr>
             <h2 >Datos del Justificante</h2>
             <div class="datos">
-                <p>Nombre: {{ $justificante->alumno->nombre }}</p>
-                <p>Grupo: {{ $justificante->alumno->grupo }}</p>
+                <p>Nombre: {{ $alumno->nombre }}</p>
+                <p>Grupo: {{ $alumno->grupo }}</p>
                 <p>Fecha de faltas: {{ $justificante->fecha_falta . ' al ' . $justificante->fecha_hasta }}</p>
                 <p>Motivos: {{  $justificante->motivos }}</p>            
             </div><br><br>
         </div>
         <form>
-            <a href="#" type="submit" class="btn btn-primary">Aceptar</a>
+            <a href="{{ url('/MostrarVerificacion')}}/{{$justificante->id}}" type="submit" class="btn btn-primary">Aceptar</a>
             <a href="#" class="btn btn-danger">Rechazar</a>
         </form>
         

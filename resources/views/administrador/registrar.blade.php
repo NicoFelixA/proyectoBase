@@ -23,15 +23,15 @@
         </div>
         <div class="form-group">
             <label for="">Fecha falta</label>
-            <input name="fecha_falta"type="date" class="form-control">
+            <input name="fecha_falta"type="date" class="form-control" value="2024-12-12">
         </div>
         <div class="form-group">
             <label for="">Fecha hasta</label>
-            <input name="fecha_hasta" type="date" class="form-control">
+            <input name="fecha_hasta" type="date" class="form-control" value="2024-12-12">
         </div>
         <div class="form-group">
             <label for="">Motivos</label>
-            <input  name="motivos" type="text" class="form-control">
+            <input  name="motivos" type="text" class="form-control" value="Mal estar">
         </div>
         <div>
             <button type="submit" class="btn btn-primary">Guardar</button>

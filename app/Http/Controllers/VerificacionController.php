@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\VerificarCodigo;
 use App\Models\Justificantes;
 use App\Models\Alumno;
 use App\Mail\Correo;
@@ -9,15 +10,23 @@ use Illuminate\Support\Facades\Mail; // Importa la clase Mail
 
 class VerificacionController extends Controller
 {
-    public function verificarCodigo(Request $request)
+    public function MostrarVerificacion($id)
     {
-        $justificante = Justificantes::findOrFail($request->justificante_id);
-
-        if ($request->codigo_verificacion == $justificante->codigo_verificacion) {
-            return redirect()->back()->with('message', 'El código de verificación es correcto');
-        } else {
-            return redirect()->back()->with('message', 'El código de verificación es incorrecto');
+        $justificante= Justificantes::find($id);
+        return view('blankpage', compact('justificante'));
+    }
+    public function Verificar(Request $request)
+    {
+        
+        $codigo=VerificarCodigo::where('justificante_id', '=', $request->input('justificante_id'))->first();
+        if($request->input('codigo_verificacion') == $codigo->codigo_verificacion){
+            $respuesta=1;
+            return view('RespuestaVerificacion', compact('respuesta'));
+        }else{
+            $respuesta=0;
+            return view('RespuestaVerificacion', compact('respuesta'));
         }
+        return view('blankpage');
     }
    
 }

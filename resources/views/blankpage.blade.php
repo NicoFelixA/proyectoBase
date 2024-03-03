@@ -1,15 +1,12 @@
-@extends('appAdmin')
-
-@section('titulo')
-    <h1>Centro de estudios tecnológicos industrial y de servicios No.107</h1>
-@stop
-
-@section('breadcrum')
-    <li class="breadcrumb-item"><a href="{{ url('/home') }}">Inicio</a></li>
-    <li class="breadcrumb-item active">Blank page</li>
-@stop
-
-@section('contenido')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
     <style>
        
 
@@ -25,13 +22,19 @@
         }
     
     </style>
-    <h4>Confirmar justificante de: Nicolás Félix</h4><hr>
-    <h6>Le hemos enviado un código de verificación a su correo</h6>
-    <form action="/verificar-codigo" method="POST">
+    <h2>Confirmar justificante de: {{$justificante->alumno->nombre}}</h2><hr>
+    <h3>Le hemos enviado un código de verificación a su correo</h3>
+    <h4>Datos del justificante:</h4>
+    <h5>Grupo: {{$justificante->alumno->grupo}}</h5>
+    <h5>Fecha falta:  {{$justificante->fecha_falta}}</h5>
+    <h5>Fecha hasta: {{$justificante->fecha_hasta}}</h5>
+    <h5>Motivos: {{$justificante->motivos}}</h5>
+
+
+    <form action="{{url('verificar-codigo')}}" method="POST">
         @csrf
-        @foreach ($justificantes as $justificante)
         <input type="hidden" name="justificante_id" value="{{ $justificante->id }}">
-    @endforeach 
+     
     <div style="text-align: center">
         <input type="text" name="codigo_verificacion" placeholder="Código de Verificación" maxlength="6">
         <button type="submit">Verificar</button></div>
@@ -41,4 +44,5 @@
     <div class="container">
     <img src="https://cetis96.edu.mx/img/logotipo/Logo-DGETI%20-%20CETis96.png" alt="">
     </div>
-@stop
+</body>
+</html>

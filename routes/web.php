@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JustificanteController;
+use App\Http\Controllers\VerificacionController;
 use App\Http\Controllers\PasesController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\ProfileController;
@@ -23,7 +24,11 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 Route::get('/', function () {
     return view('welcome');
+    
 });
+Route::get('/MostrarVerificacion/{id}', [VerificacionController::class, 'MostrarVerificacion']);
+    Route::post('/verificar-codigo', [VerificacionController::class, 'Verificar']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -48,14 +53,10 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
     Route::get('/reporte/pdfPase/{id}', [AlumnoController::class, 'reporteAlumnoPdfPase']);
     Route::post('guardar', [JustificanteController::class, 'guardarJustificante']);
     Route::post('guardarP', [PasesController::class, 'guardarPase']);
-    Route::post('/verificar-codigo', 'VerificacionController@verificarCodigo');
     //Rutas de administrador
     Route::get('/homeAdministrador', [HomeController::class, 'homeAdministrador']);
-    Route::get('/blankpage', function () {
-        $justificante = Justificantes::all(); // Obtener todos los justificantes
-
-        return view('blankpage', compact('justificantes'));
-    });
+        
+    
 
     //Ruta de ejemplo para obtener detalle de calificacion
     Route::get('alumno/materias', [AlumnoController::class, 'materias']);
@@ -66,7 +67,7 @@ Route::group(['prefix' => 'alumno','middleware' => ['alumno', 'role:alumno']], f
     Route::get('/home1', function () {
         return view('alumno.home1');
     });
-    Route::get('alumno/consultaralumno', [AlumnoController::class, 'consultaralumno']);
+    Route::get('/alumno/consultaralumno', [AlumnoController::class, 'consultaralumno']);
     Route::get('/alumno/consultarpasesalumno', [AlumnoController::class, 'consultarpasesalumno']);
     Route::get('/alumno/registraralumno', [AlumnoController::class, 'registraralumno']);
     Route::get('/alumno/registrarpasesalumno', [AlumnoController::class, 'registrarpasesalumno']);

@@ -7,6 +7,7 @@ use App\Models\Alumno;
 use Illuminate\Http\Request;
 use App\Models\Justificantes;
 use App\Models\VerificarCodigo;
+use App\Mail\correoVerificacion;
 use Illuminate\Support\Facades\Mail;
 
 class JustificanteController extends Controller
@@ -19,7 +20,7 @@ class JustificanteController extends Controller
         $alumno = Alumno::find($alumno_id);
         $nombre_alumno = $alumno->nombre;
         // Crear un nuevo justificante
-        Justificantes::create([
+        $justificante = Justificantes::create([
             'user_id'       => auth()->user()->id,
             'alumno_id'     => $datos->input('alumno_id'),
             'fecha_falta'   => $datos->input('fecha_falta'),
@@ -27,26 +28,21 @@ class JustificanteController extends Controller
             'motivos'       => $datos->input('motivos')
         ]);
 
-        // Verificar si se creó correctamente el justificante
             // Generar código de verificación de 6 números
             $codigoVerificacion = mt_rand(100000, 999999);
 
-            // Obtener el justificante creado
-            $justificante = Justificantes::with('alumno')->latest()->first();
-
             // Enviar correo con el código de verificación
-            Mail::to('nicolas.felix21@cetis107.edu.mx')->send(new Correo($codigoVerificacion));
-
+           Mail::to('nicolas.felix21@cetis107.edu.mx')->send(new correoVerificacion($codigoVerificacion));
             // Enviar correo con los datos del justificante
-            Mail::to('nicolas.felix21@cetis107.edu.mx')->send(new Correo($justificante));
+            $alumno=$justificante->alumno;
+            Mail::to('nicolas.felix21@cetis107.edu.mx')->send(new Correo($justificante, $alumno));
 
             // Crear un nuevo registro en la tabla VerificarCodigo
             VerificarCodigo::create([
                 'justificante_id'       => $justificante->id,
                 'codigo_verificacion'   => $codigoVerificacion
             ]);
-
-            return view('correo', ['nombre' => $nombre_alumno]);
-
+            return redirect('/home');
     }   
+   
 }

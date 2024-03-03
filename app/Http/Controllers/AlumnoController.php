@@ -17,8 +17,8 @@ class AlumnoController extends Controller
         return view('administrador.consultar', compact('justificantes'));
     }
     public function consultaralumno(){
-        $misjustificantes = MisJustificantes::all();
-        return view('alumno.consultaralumno', compact('alumnos'));
+        $justificantes = Justificantes::with('alumno')->get();
+        return view('alumno.consultaralumno', compact('justificantes'));
     }
 
     
@@ -91,7 +91,7 @@ class AlumnoController extends Controller
     }
 
     public function generaQR(){
-        return QrCode::size(300)->generate('Aquí va La URL que se va a acceder');
+        return QrCode::size(300)->generate('https://drive.google.com/file/d/1uDfGbyTUt5AVjzz6oFAh_bEa9B0rCEAE/view?usp=sharing');
     }
 
 }

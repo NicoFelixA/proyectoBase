@@ -9,6 +9,6 @@
 <body>
     <h1 >Centro De Estudios Tecnológicos Industrial Y De Servicios 107</h1><hr>
 
-    <h1>Su código de verificación es: {{ $codigoVerificacion }}</h1>
+    <h1>Su código de verificación del justificante es: {{ $codigoVerificacion }}</h1>
 </body>
 </html>
