@@ -9,7 +9,7 @@ use PHPUnit\Framework\Error\Notice;
 class HomeController extends Controller
 {
     public function home(){
-        return view('home');
+        return view('alumno.home1');
     }
 
     public function homeAdministrador(){
