@@ -23,7 +23,7 @@ class AlumnoController extends Controller
 
     
     public function consultarPases(){
-        $pases = Pases::all();
+        $pases = Pases::with('alumno')->get();
 
         return view('administrador.consultarPases', compact('pases'));
     }
@@ -74,10 +74,10 @@ class AlumnoController extends Controller
     }
 
     public function reporteAlumnoPdfPase($id){
-        $justificantes = Justificantes::find($id);
+        $pases = Pases::find($id);
         PDF::SetPaper('A4', 'landscape'); //Configuracion de la libreria
-        $pdf = PDF::loadView('PDF.reportePases', array('justificantes' => $justificantes)); //Carga la vista y la convierte a PDF
-        return $pdf->download("reportePases".$justificantes->id.".pdf"); //Descarga el PDF con ese nombre
+        $pdf = PDF::loadView('PDF.reportePases', array('pases' => $pases)); //Carga la vista y la convierte a PDF
+        return $pdf->download("reportePases".$pases->id.".pdf"); //Descarga el PDF con ese nombre
     }
 
     public function materias(){

@@ -6,19 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reporte PDF Generico</title>
     <style>
+        h1{
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+        }
+        .datos{
+            font-size: 20px;
+        }
+        .imagen{
+            text-align: center;
+        }
+        *{
+            margin: 15px;
+        }
+        
+        
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="col-6">
-            <h1>Datos del pase de salida</h1><hr>
-            <h5>ID: {{ $alumno->id }}</h5>
-            <h5>Nombre: {{ $alumno->nombre }}</h5>
-            <h5>Fecha de salida: {{ $alumno->fecha_salida }}</h5>
-            <h5>Motivos: {{  $alumno->motivos }}</h5>            
-        </div>
-        <div class="col-6">
-            <img src="{{ asset('images/QR') }}" width="200px">
+        <h1 >Centro De Estudios Tecnológicos Industrial Y De Servicios 107</h1><hr>
+            <h3 >Datos del Justificante</h3>
+            <div class="datos">
+                <p>Nombre: {{ $pases->alumno->nombre }}</p>
+                <p>Grupo: {{ $pases->alumno->grupo }}</p>
+                <p>Hora de salida: {{ $pases->hora_salida}}</p>
+                <p>Motivos: {{  $pases->motivos }}</p>            
+            </div><br><br><br><br><br>
+        <div class="imagen">
+            <img src="{{ asset('images/framePase.png') }}" width="200px">
         </div>
     </div>
 </body>

@@ -19,9 +19,9 @@
         }
     </style>
     @if($respuesta==1)
-     <h1>Se aceptó el justificante</h1>
+     <h1>Se aceptó el permiso</h1>
     @elseif($respuesta==0)
-      <h1>Se rechazó el justificante</h1>
+      <h1>Se rechazó el permiso</h1>
     @else
         <h1>Ocurrio un error</h1>
     @endif

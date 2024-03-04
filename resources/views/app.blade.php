@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Permisos escolares</title>
+  <title>Justificantes y pases de salida</title>
   <link rel="icon" type="image/x-icon" href="{{ url('images/logohb.ico') }}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -23,7 +23,7 @@
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini sidebar-collapse">
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-dark border-bottom-0" style="background-color: #b8b4b4;">
+        <nav class="main-header navbar navbar-expand navbar-dark border-bottom-0" style="background-color: #065698;">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -137,7 +137,7 @@
           <!-- Brand Logo -->
           <a href="{{asset('/home')}}" class="brand-link">
             <img src="{{ url('images/AdminLTELogo.png') }}" alt="baessh" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Permisos escolares </span>
+            <span class="brand-text font-weight-light">Permisos escolares</span>
           </a>
 
           <!-- Sidebar -->
@@ -180,7 +180,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item active">
-                  <a href="{{asset('/homeAlumno')}}" class="nav-link">
+                  <a href="{{asset('/home')}}" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                       Inicio
@@ -189,7 +189,7 @@
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-users"></i>
+                    <i class="nav-icon fas fa-users""></i>
                     <p>
                        Justificantes
                       <i class="fas fa-angle-left right"></i>
@@ -212,9 +212,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                      <i class="nav-icon fas fa-tools"></i>
+                      <i class="nav-icon fas fa-tools""></i>
                       <p>
-                          Pases de salida
+                         Pases de salida
                         <i class="fas fa-angle-left right"></i>
                       </p>
                     </a>
@@ -226,7 +226,7 @@
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="{{url('/alumno/registrarpasesalumnno')}}" class="nav-link">
+                        <a href="{{url('/alumno/registrarpasesalumno')}}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Registrar</p>
                         </a>

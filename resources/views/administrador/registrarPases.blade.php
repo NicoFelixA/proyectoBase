@@ -10,7 +10,7 @@
 @stop
 
 @section('contenido')
-    <form action="{{ url('guardarP') }}" method="POST">
+    <form action="{{ url('guardarPase') }}" method="POST">
         @csrf
     <div>
         <label for="">Alumno</label>

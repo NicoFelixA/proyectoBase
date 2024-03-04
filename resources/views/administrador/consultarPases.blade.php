@@ -18,6 +18,7 @@
                     <th>Nombre</th>
                     <th>Grupo</th>
                     <th>Hora salida</th>
+                    <th>Motivos</th>
                     <th>Opciones</th>
                     <th>Más</th>
                 </tr>
