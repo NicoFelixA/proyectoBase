@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\VerificarCodigo;
 use App\Models\Justificantes;
 use App\Models\Alumno;
@@ -21,6 +22,9 @@ class VerificacionController extends Controller
         $codigo=VerificarCodigo::where('justificante_id', '=', $request->input('justificante_id'))->first();
         if($request->input('codigo_verificacion') == $codigo->codigo_verificacion){
             $respuesta=1;
+            $justificante= Justificantes::find($request->input('justificante_id'));
+            $justificante->estatus="Aceptado";
+            $justificante->save();
             return view('RespuestaVerificacion', compact('respuesta'));
         }else{
             $respuesta=0;

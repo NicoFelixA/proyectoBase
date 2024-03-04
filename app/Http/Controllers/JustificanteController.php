@@ -25,7 +25,7 @@ class JustificanteController extends Controller
             'alumno_id'     => $datos->input('alumno_id'),
             'fecha_falta'   => $datos->input('fecha_falta'),
             'fecha_hasta'   => $datos->input('fecha_hasta'),
-            'motivos'       => $datos->input('motivos')
+            'motivos'       => $datos->input('motivos'),
         ]);
 
             // Generar código de verificación de 6 números

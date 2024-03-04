@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('fecha_falta');
             $table->date('fecha_hasta');
             $table->string('motivos');
+            $table->string('estatus')->default('No aceptado');
             
 
             

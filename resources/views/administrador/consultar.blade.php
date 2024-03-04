@@ -20,6 +20,7 @@
                     <th>Fecha falta</th>
                     <th>Fecha hasta</th>
                     <th>Motivos</th>
+                    <th>Estatus</th>
                     <th>Opciones</th>
                     <th>Más</th>
                 </tr>
@@ -33,6 +34,7 @@
     <td>{{ $j->fecha_falta }}</td>
     <td>{{ $j->fecha_hasta }}</td>
     <td>{{ $j->motivos }}</td>
+    <td>{{ $j->estatus }}</td>
     <td>
         <form action="{{ route('elemento.eliminar', $j->id) }}" method="POST">
             @csrf
