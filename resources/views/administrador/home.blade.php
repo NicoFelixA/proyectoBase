@@ -1,8 +1,10 @@
 @extends('appAdmin')
 
 @section('home')
-    <h5 class="mb-2" style="text-align: center; background-color: rgb(141, 20, 20); padding: 40px; color: white; font-size: 40px"   >Centro De Estudios Tecnológicos Industrial Y De Servicios No.107</h5><br>
-    <h4 style="text-align: center">Bienvenido orientador</h4>
+
+<div class="familia" style="font-family: Bodoni;">
+
+  <h5 class="mb-2" style="text-align: center; background-color: rgb(110, 0, 0); padding: 40px; color: white; font-size: 40px; "   >Centro De Estudios Tecnológicos Industrial Y De Servicios No.107</h5><br>
     <div class="">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -29,15 +31,24 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
     </div><br><br>
-    <div class="row" style="text-align: center">
-      <div class='col-6' style="border-radius: 5px; border: 1px solid black; " onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='white'" ><a href="{{ asset('administrador/consultar') }}" style="text-decoration: none; color:black">Justificantes</a>
-
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+          <a href="{{ asset('administrador/consultar') }}" class="btn btn-primary btn-block rounded-pill mb-3" style="background-color:rgba(0, 0, 0, 0.705); border-color:black;">
+              Justificantes
+          </a>
       </div>
-      <div class="col-6" style="border-radius: 5px; border: 1px solid black; " onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='white'" > <a href="{{ asset('administrador/consultarPases') }}" style="text-decoration: none; color:black">Pases de Salida</a></div>
-    </div>
+      <div class="col-md-6">
+          <a href="{{ asset('administrador/consultarPases') }}" class="btn btn-primary btn-block rounded-pill mb-3" style="background-color:rgb(0, 0, 0, 0.705); border-color:black;" >
+              Pases de Salida
+          </a>
+      </div>
+  </div>
+  
               </div>
         </div>
     </div>
+  
+</div>
+    
 @endsection
