@@ -41,6 +41,10 @@ class AlumnoController extends Controller
         //consultas el alumno
         return view('alumno.registraralumno');
     }
+    public function registrarUser(){
+        //consultas el alumno
+        return view('administrador.registrarUser');
+    }
     public function registrarPases(){
         $alumnos=Alumno::all(); 
         //registrar el alumno
@@ -49,6 +53,26 @@ class AlumnoController extends Controller
     public function registrarpasesalumno(){
         //registrar el alumno
         return view('alumno.registrarpasesalumno');
+    }
+    public function guardarUser(Request $datos){
+        Alumno::create([
+            'nombre' => $datos->input('nombre'),
+            'paterno' => $datos->input('paterno'),
+            'materno' => $datos->input('materno'),
+            'curp' => $datos->input('curp'),
+            'carrera' => $datos->input('carrera'),
+            'generacion' => $datos->input('generacion'),
+            'turno' => $datos->input('turno'),
+            'numero_control' => $datos->input('numero_control'),
+            'semestre' => $datos->input('semestre'),
+            'grupo' => $datos->input('grupo'),
+            'sexo' => $datos->input('sexo'),
+            'nombrePadre' => $datos->input('nombrePadre'),
+            'numeroPadre' => $datos->input('numeroPadre')
+        ]);
+    
+        // Redirigir a la página de inicio con un mensaje de éxito
+        return redirect('/home')->with('success', 'Alumno registrado exitosamente');
     }
     public function eliminar($id)
     {

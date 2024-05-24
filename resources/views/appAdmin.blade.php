@@ -233,6 +233,13 @@
                       </li>
                     </ul>
                 </li>
+                <li class="nav-item active">
+                  <a href="{{asset('/administrador/registrarUser')}}" class="nav-link">
+                    <i class="nav-icon fas fa-user"></i>                    <p>
+                       Registrar alumno
+                    </p>
+                  </a>
+                </li>
               </ul>
             </nav>
             <!-- /.sidebar-menu -->

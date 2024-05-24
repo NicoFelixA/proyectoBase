@@ -24,13 +24,11 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('paterno');
             $table->string('materno');
-            $table->string('nombre_completo');
             $table->string('CURP');
             $table->string('sexo');
-            $table->date('fecha_falta');
-            $table->date('fecha_hasta');
-            $table->dateTime('fecha_salida');
-            $table->string('motivos');
+            $table->string('numeroPadre');
+            $table->string('nombrePadre');
+            
 
 
             $table->timestamps();

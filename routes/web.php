@@ -43,6 +43,7 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     //Rutas de alumnos
+    Route::get('/administrador/registrarUser', [AlumnoController::class, 'registrarUser']);
     Route::get('/administrador/consultar', [AlumnoController::class, 'consultar']);
     Route::get('/administrador/consultarPases', [AlumnoController::class, 'consultarPases']);
     Route::get('/administrador/registrar', [AlumnoController::class, 'registrar']);
@@ -53,6 +54,7 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
     Route::get('/reporte/pdfPase/{id}', [AlumnoController::class, 'reporteAlumnoPdfPase']);
     Route::post('guardar', [JustificanteController::class, 'guardarJustificante']);
     Route::post('guardarPase', [PasesController::class, 'guardarPase']);
+    Route::post('guardarUser', [AlumnoController::class, 'guardarUser']);
     //Rutas de administrador
     Route::get('/homeAdministrador', [HomeController::class, 'homeAdministrador']);
         
