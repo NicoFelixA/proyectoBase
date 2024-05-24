@@ -28,6 +28,7 @@
 <body>
     <div class="container">
         <div class=>
+            <img src="images/banner.jpg" alt="">
             <h1 >Centro De Estudios Tecnológicos Industrial Y De Servicios 107</h1><hr>
             <h3 >Datos del Justificante</h3>
             <div class="datos">
