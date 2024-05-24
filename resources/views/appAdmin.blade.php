@@ -203,6 +203,12 @@
                       </a>
                     </li>
                     <li class="nav-item">
+                      <a href="{{url('/administrador/aceptados')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Aceptados</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
                       <a href="{{url('/administrador/registrar')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Registrar</p>

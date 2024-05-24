@@ -36,7 +36,6 @@
                 <p>Grupo: {{ $justificantes->alumno->grupo }}</p>
                 <p>Fecha de faltas: {{ $justificantes->fecha_falta . ' al ' . $justificantes->fecha_hasta }}</p>
                 <p>Motivos: {{  $justificantes->motivos }}</p>            
-                <p>Estatus: {{  $justificantes->estatus }}</p>            
             </div><br><br><br><br><br>
         </div>
         <div class="imagen">

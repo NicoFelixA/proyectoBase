@@ -34,7 +34,6 @@
                 <p>Nombre: {{ $pases->alumno->nombre }}</p>
                 <p>Grupo: {{ $pases->alumno->grupo }}</p>
                 <p>Hora de salida: {{ $pases->hora_salida}}</p>
-                <p>Motivos: {{  $pases->motivos }}</p>            
             </div><br><br><br><br><br>
         <div class="imagen">
             <img src="{{ asset('images/framePase.png') }}" width="200px">

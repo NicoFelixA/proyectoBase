@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use PDF;
 use App\Models\Alumno;
 use App\Models\Justificantes;
+use App\Models\Aceptados    ;
 use App\Models\Pases;
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -20,7 +21,11 @@ class AlumnoController extends Controller
         $justificantes = Justificantes::with('alumno')->get();
         return view('alumno.consultaralumno', compact('justificantes'));
     }
-
+    public function aceptados(){
+        $aceptados = Aceptados::with('alumno')->get();
+    
+            return view('administrador.aceptados', compact('aceptados'));
+        }
     
     public function consultarPases(){
         $pases = Pases::with('alumno')->get();

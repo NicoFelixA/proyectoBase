@@ -20,7 +20,7 @@ class JustificantesSeeder extends Seeder
                                 'fecha_falta'   =>"2024-02-15",
                                 'fecha_hasta'   =>"2024-02-16",
                                 'motivos'       =>"Enfermedad",
-                                'estatus'       => "Aceptado"                
+                                'estatus'       => "No aceptado"                
                             ]); 
         Justificantes::create([ 
                                 'user_id'       =>2,
@@ -36,7 +36,7 @@ class JustificantesSeeder extends Seeder
                                 'fecha_falta'   =>"2024-01-15",
                                 'fecha_hasta'   =>"2024-01-16",
                                 'motivos'       =>"Cita con el doctor",
-                                'estatus'       => "Aceptado"
+                                'estatus'       => "No aceptado"
                             ]);
         Justificantes::create([ 
                                 'user_id'       =>1,
@@ -52,7 +52,7 @@ class JustificantesSeeder extends Seeder
                                 'fecha_falta'   =>"2024-02-01",
                                 'fecha_hasta'   =>"2024-02-03",
                                 'motivos'       =>"Concurso",
-                        'estatus'       => "Aceptado"                  
+                        'estatus'       => "No aceptado"                  
                             ]);
         Justificantes::create([ 
                                 'user_id'       =>2,
@@ -76,7 +76,7 @@ class JustificantesSeeder extends Seeder
                                 'fecha_falta'   =>"2024-01-12",
                                 'fecha_hasta'   =>"2024-01-12",
                                 'motivos'       =>"Cita pasaporte",
-                        'estatus'       => "Aceptado"            
+                        'estatus'       => "No aceptado"            
                             ]);
         Justificantes::create([ 
                                 'user_id'       =>1,
@@ -92,7 +92,15 @@ class JustificantesSeeder extends Seeder
                                 'fecha_falta'   =>"2024-02-11",
                                 'fecha_hasta'   =>"2024-02-12",
                                 'motivos'       =>"Cita de tarjeta del camión",
-                                'estatus'       => "Aceptado"
+                                'estatus'       => "No aceptado"
+                            ]);
+                             Justificantes::create([ 
+                                'user_id'       =>2,
+                                'alumno_id'     =>56,                            
+                                'fecha_falta'   =>"2024-02-11",
+                                'fecha_hasta'   =>"2024-02-12",
+                                'motivos'       =>"Cita de tarjeta del camión",
+                                'estatus'       => "No aceptado"
                             ]);
     }
 }

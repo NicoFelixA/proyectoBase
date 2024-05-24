@@ -22,7 +22,6 @@
                     <th>Motivos</th>
                     <th>Estatus</th>
                     <th>Opciones</th>
-                    <th>Más</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,12 +48,7 @@
             <i class="fa fa-check"></i>
         </a>
     </td>
-    <td>
-        <!-- Reporte PDF -->
-        <a href="{{ url('reporte/pdf') }}/{{ $j->id }}" class="btn btn-secondary btn-sm">
-            <i class="far fa-file-pdf"></i>
-        </a></form>
-    </td>
+   
 </tr>
 @endforeach
 
