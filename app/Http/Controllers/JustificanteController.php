@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\Correo;
 use App\Models\Alumno;
+use App\Models\Aceptados;
 use Illuminate\Http\Request;
 use App\Models\Justificantes;
 use App\Models\VerificarCodigo;
@@ -44,5 +45,39 @@ class JustificanteController extends Controller
             ]);
             return redirect('/home');
     }   
-   
+    public function eliminar($id)
+    {
+        $justificante = Justificantes::find($id);
+
+        if ($justificante) {
+            $justificante->delete();
+            return redirect()->back()->with('success', 'Justificante eliminado exitosamente.');
+        }
+
+        return redirect()->back()->with('error', 'Justificante no encontrado.');
+    }
+
+    public function aceptar($id)
+    {
+        $justificante = Justificantes::find($id);
+
+        if ($justificante) {
+            // Crear un nuevo registro en la tabla aceptados
+            Aceptados::create([
+                'user_id'       => $justificante->user_id,
+                'alumno_id'     => $justificante->alumno_id,
+                'fecha_falta'   => $justificante->fecha_falta,
+                'fecha_hasta'   => $justificante->fecha_hasta,
+                'motivos'       => $justificante->motivos,
+                'estatus'       => 'Aceptado'
+            ]);
+
+            // Eliminar el justificante de la tabla original
+            $justificante->delete();
+
+            return redirect()->back()->with('success', 'Justificante aceptado y movido a la tabla de aceptados.');
+        }
+
+        return redirect()->back()->with('error', 'Justificante no encontrado.');
+    }
 }

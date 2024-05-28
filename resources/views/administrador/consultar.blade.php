@@ -26,32 +26,32 @@
             </thead>
             <tbody>
                 @foreach ($justificantes as $j)
-<tr>
-    <td>{{ $j->id }}</td>
-    <td>{{ $j->alumno->nombre }}</td>
-    <td>{{ $j->alumno->grupo }}</td>
-    <td>{{ $j->fecha_falta }}</td>
-    <td>{{ $j->fecha_hasta }}</td>
-    <td>{{ $j->motivos }}</td>
-    <td>{{ $j->estatus }}</td>
-    <td>
-        <form action="{{ route('elemento.eliminar', $j->id) }}" method="POST">
-            @csrf
-            @method('DELETE')
-            <!-- Eliminar -->
-            <button type="submit" class="btn btn-danger btn-sm">
-                <i class="fas fa-times"></i>
-            </button>
-        
-        <!-- Aceptar -->
-        <a href="" class="btn btn-success btn-sm">
-            <i class="fa fa-check"></i>
-        </a>
-    </td>
-   
-</tr>
-@endforeach
+                <tr>
+                    <td>{{ $j->id }}</td>
+                    <td>{{ $j->alumno->nombre }}</td>
+                    <td>{{ $j->alumno->grupo }}</td>
+                    <td>{{ $j->fecha_falta }}</td>
+                    <td>{{ $j->fecha_hasta }}</td>
+                    <td>{{ $j->motivos }}</td>
+                    <td>{{ $j->estatus }}</td>
+                    <td>
+                        <form action="{{ route('elemento.eliminar', $j->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </form>
 
+                        <form action="{{ route('elemento.aceptar', $j->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            <button type="submit" class="btn btn-success btn-sm">
+                                <i class="fa fa-check"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

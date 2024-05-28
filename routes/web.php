@@ -55,6 +55,8 @@ Route::group(['middleware' => ['admin', 'role:admin']], function() {
     Route::post('guardar', [JustificanteController::class, 'guardarJustificante']);
     Route::post('guardarPase', [PasesController::class, 'guardarPase']);
     Route::post('guardarUser', [AlumnoController::class, 'guardarUser']);
+    Route::delete('/justificantes/{id}', [JustificanteController::class, 'eliminar'])->name('elemento.eliminar');
+    Route::post('/justificantes/aceptar/{id}', [JustificanteController::class, 'aceptar'])->name('elemento.aceptar');
     Route::match(['get', 'post'], '/administrador/aceptados', [AlumnoController::class, 'aceptados']);
     //Rutas de administrador
     Route::get('/homeAdministrador', [HomeController::class, 'homeAdministrador']);
