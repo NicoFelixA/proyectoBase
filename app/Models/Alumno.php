@@ -33,6 +33,11 @@ class Alumno extends Model
 
     public function justificantes()
     {
-        return $this->hasMany(Justificantes::class);
+        return $this->hasMany(Justificantes::class, 'alumno_id');
+        
     }
+    public function pases()
+{
+    return $this->hasMany(Pases::class);
+}
 }

@@ -31,7 +31,7 @@
         <h1 >Centro De Estudios Tecnológicos Industrial Y De Servicios 107</h1><hr>
             <h3 >Datos del Justificante</h3>
             <div class="datos">
-                <p>Nombre: {{ $pases->alumno->nombre }}</p>
+                <p>Nombre: {{ $pases->alumno->nombre }} {{ $pases->alumno->paterno }} {{ $pases->alumno->materno }}</p>
                 <p>Grupo: {{ $pases->alumno->grupo }}</p>
                 <p>Hora de salida: {{ $pases->hora_salida}}</p>
             </div><br><br><br><br><br>

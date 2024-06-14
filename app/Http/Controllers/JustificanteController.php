@@ -20,6 +20,7 @@ class JustificanteController extends Controller
         // Obtener el nombre del alumno utilizando el ID
         $alumno = Alumno::find($alumno_id);
         $nombre_alumno = $alumno->nombre;
+
         // Crear un nuevo justificante
         $justificante = Justificantes::create([
             'user_id'       => auth()->user()->id,
@@ -29,22 +30,25 @@ class JustificanteController extends Controller
             'motivos'       => $datos->input('motivos'),
         ]);
 
-            // Generar código de verificación de 6 números
-            $codigoVerificacion = mt_rand(100000, 999999);
+        // Generar código de verificación de 6 números
+        $codigoVerificacion = mt_rand(100000, 999999);
 
-            // Enviar correo con el código de verificación
-           Mail::to('nicolas.felix21@cetis107.edu.mx')->send(new correoVerificacion($codigoVerificacion));
-            // Enviar correo con los datos del justificante
-            $alumno=$justificante->alumno;
-            Mail::to('nicolas.felix21@cetis107.edu.mx')->send(new Correo($justificante, $alumno));
+        // Enviar correo con el código de verificación
+        Mail::to('nicolas.felix21@cetis107.edu.mx')->send(new correoVerificacion($codigoVerificacion));
 
-            // Crear un nuevo registro en la tabla VerificarCodigo
-            VerificarCodigo::create([
-                'justificante_id'       => $justificante->id,
-                'codigo_verificacion'   => $codigoVerificacion
-            ]);
-            return redirect('/home');
-    }   
+        // Enviar correo con los datos del justificante
+        $alumno = $justificante->alumno;
+        Mail::to('nicolas.felix21@cetis107.edu.mx')->send(new Correo($justificante, $alumno));
+
+        // Crear un nuevo registro en la tabla VerificarCodigo
+        VerificarCodigo::create([
+            'justificante_id'       => $justificante->id,
+            'codigo_verificacion'   => $codigoVerificacion
+        ]);
+
+        return redirect('/home');
+    }
+
     public function eliminar($id)
     {
         $justificante = Justificantes::find($id);

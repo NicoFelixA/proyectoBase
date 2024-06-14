@@ -15,7 +15,8 @@ class AlumnoSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {        
+        Alumno::create([ 'carrera' => 'PROGRAMACIÓN', 'generacion' => '2020-2023', 'turno' => 'vespertino', 'semestre'=> '6', 'grupo' => '6AVP', 'numero_control' => '20325061070101', 'nombre' => 'NICOLAS', 'paterno' => 'FELIX','materno' => 'AGUILASOCHO', 'curp' => 'MOMJ050629HSLRCNA8', 'sexo' => 'H','numeroPadre'=> '6674525312', 'nombrePadre' => 'GERARDO FELIX MEDINA']);
         Alumno::create([ 'carrera' => 'ELECTRÓNICA', 'generacion' => '2018-2021', 'turno' => 'vespertino', 'semestre'=> '6', 'grupo' => '6AVP', 'numero_control' => '18325061070062', 'nombre' => 'DAMIAN EDUARDO', 'paterno' => 'NAVEJAS','materno' => 'CORRALES', 'curp' => 'NACD030427HSLVRMA0', 'sexo' => 'H', 'numeroPadre'=> '6674525312', 'nombrePadre' => 'GERARDO FELIX MEDINA']);
         Alumno::create([ 'carrera' => 'OFIMÁTICA', 'generacion' => '2019-2022', 'turno' => 'vespertino', 'semestre'=> '6', 'grupo' => '6AVP', 'numero_control' => '19325061070317', 'nombre' => 'MIGUEL ANGEL', 'paterno' => 'GARCIA','materno' => 'ESPINOZA', 'curp' => 'GAEM031204HSLRSGA0', 'sexo' => 'H','numeroPadre'=> '6674525312', 'nombrePadre' => 'GERARDO FELIX MEDINA']);
         Alumno::create([ 'carrera' => 'OFIMÁTICA', 'generacion' => '2019-2022', 'turno' => 'matutino', 'semestre'=> '6', 'grupo' => '6AVP', 'numero_control' => '19325061070528', 'nombre' => 'PABLO CANEK', 'paterno' => 'PEREZ','materno' => 'MOLINA', 'curp' => 'PEMP040810HSLRLBA0', 'sexo' => 'H','numeroPadre'=> '6674525312', 'nombrePadre' => 'GERARDO FELIX MEDINA']);

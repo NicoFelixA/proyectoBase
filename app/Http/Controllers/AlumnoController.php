@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use PDF;
 use App\Models\Alumno;
 use App\Models\Justificantes;
@@ -17,10 +17,32 @@ class AlumnoController extends Controller
 
         return view('administrador.consultar', compact('justificantes'));
     }
-    public function consultaralumno(){
-        $justificantes = Justificantes::with('alumno')->get();
+    public function consultaralumno()
+    {
+        
+        $user = Auth::user();
+        if ($user->alumno) {
+            $justificantes = $user->alumno->justificantes;
+        } else {
+            $justificantes = collect(); // Si el usuario no tiene un alumno asociado, devuelve una colección vacía
+        }
+    
         return view('alumno.consultaralumno', compact('justificantes'));
     }
+    public function consultarpasesalumno()
+    {
+        $user = Auth::user();
+        if ($user && $user->alumno) {
+            $alumno = $user->alumno;
+            $pases = $alumno->pases()->get(); // Asegúrate de obtener los pases asociados al alumno
+        } else {
+            $pases = collect(); // En caso de que el usuario no tenga un alumno asociado, devuelve una colección vacía
+        }
+    
+        return view('alumno.consultarpasesalumno', compact('pases'));
+    }
+
+
     public function aceptados(){
         $aceptados = Aceptados::with('alumno')->get();
     
@@ -32,10 +54,7 @@ class AlumnoController extends Controller
 
         return view('administrador.consultarPases', compact('pases'));
     }
-    public function consultarpasesalumno(){
-
-        return view('alumno.consultarpasesalumno');
-    }
+   
 
     public function registrar(){
         //consultas el alumno
@@ -97,16 +116,22 @@ class AlumnoController extends Controller
 
     public function reporteAlumnoPdf($id){
         $justificantes = Justificantes::find($id);
-        PDF::SetPaper('A4', 'landscape'); //Configuracion de la libreria
-        $pdf = PDF::loadView('PDF.reporteAlumno', array('justificantes' => $justificantes)); //Carga la vista y la convierte a PDF
-        return $pdf->download("reporteAlumno".$justificantes->id.".pdf"); //Descarga el PDF con ese nombre
+        if (!$justificantes) {
+            abort(404, 'No se encontró el justificante');
+        }
+        PDF::SetPaper('A4', 'landscape'); // Configuración de la librería
+        $pdf = PDF::loadView('PDF.reporteAlumno', compact('justificantes')); // Carga la vista y la convierte a PDF
+        return $pdf->download("reporteAlumno{$justificantes->id}.pdf"); // Descarga el PDF con ese nombre
     }
-
+    
     public function reporteAlumnoPdfPase($id){
         $pases = Pases::find($id);
-        PDF::SetPaper('A4', 'landscape'); //Configuracion de la libreria
-        $pdf = PDF::loadView('PDF.reportePases', array('pases' => $pases)); //Carga la vista y la convierte a PDF
-        return $pdf->download("reportePases".$pases->id.".pdf"); //Descarga el PDF con ese nombre
+        if (!$pases) {
+            abort(404, 'No se encontró el pase');
+        }
+        PDF::SetPaper('A4', 'landscape'); // Configuración de la librería
+        $pdf = PDF::loadView('PDF.reportePases', compact('pases')); // Carga la vista y la convierte a PDF
+        return $pdf->download("reportePases{$pases->id}.pdf"); // Descarga el PDF con ese nombre
     }
 
     public function materias(){

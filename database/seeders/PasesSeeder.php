@@ -14,12 +14,14 @@ class PasesSeeder extends Seeder
      */
     public function run()
     {
+
         Pases::create([ 
-                                'user_id'       =>1,
-                                'alumno_id'     =>1,
-                                'hora_salida'  =>"2024-02-15 12:00:00",
-                                'motivos'       =>"Enfermedad"
-                            ]);
+            'user_id'       =>1,
+            'alumno_id'     =>1,
+            'hora_salida'  =>"2024-02-15 17:00:00",
+            'motivos'       =>"Enfermedad"
+        ]);              
+      
         Pases::create([ 
                                 'user_id'       =>2,
                                 'alumno_id'     =>2,
@@ -43,7 +45,12 @@ class PasesSeeder extends Seeder
                                 'alumno_id'     =>6,
                                 'hora_salida'  =>"2024-02-01 12:00:00",
                                 'motivos'       =>"Concurso"
-                            ]);
+                            ]); Pases::create([ 
+            'user_id'       =>1,
+            'alumno_id'     =>1,
+            'hora_salida'  =>"2024-03-17 14:00:00",
+            'motivos'       =>"Fisura"
+        ]); 
         Pases::create([ 
                                 'user_id'       =>2,
                                 'alumno_id'     =>9,                                
@@ -73,6 +80,10 @@ class PasesSeeder extends Seeder
                                 'alumno_id'     =>56,
                                 'hora_salida'  =>"2024-02-11 12:00:00",
                                 'motivos'       =>"Cita de tarjeta del camión"
-                            ]);
+                            ]);Pases::create([ 
+            'user_id'       =>1,
+            'alumno_id'     =>1,
+            'hora_salida'  =>"2024-04-11 12:00:00",
+            'motivos'       =>"Cita con el doctor"  ]);
     }
 }

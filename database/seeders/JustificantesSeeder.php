@@ -22,6 +22,9 @@ class JustificantesSeeder extends Seeder
                                 'motivos'       =>"Enfermedad",
                                 'estatus'       => "No aceptado"                
                             ]); 
+                         
+                           
+                            
         Justificantes::create([ 
                                 'user_id'       =>2,
                                 'alumno_id'     =>2,
@@ -37,7 +40,14 @@ class JustificantesSeeder extends Seeder
                                 'fecha_hasta'   =>"2024-01-16",
                                 'motivos'       =>"Cita con el doctor",
                                 'estatus'       => "No aceptado"
-                            ]);
+                            ]);   Justificantes::create([  
+                                'user_id'       =>1,
+                                'alumno_id'     =>1,
+                                'fecha_falta'   =>"2024-04-22",
+                                'fecha_hasta'   =>"2024-04-23",
+                                'motivos'       =>"Enfermedad",
+                                'estatus'       => "No aceptado"                
+                            ]); 
         Justificantes::create([ 
                                 'user_id'       =>1,
                                 'alumno_id'     =>4,
@@ -102,5 +112,13 @@ class JustificantesSeeder extends Seeder
                                 'motivos'       =>"Cita de tarjeta del camión",
                                 'estatus'       => "No aceptado"
                             ]);
+                            Justificantes::create([  
+                                'user_id'       =>1,
+                                'alumno_id'     =>1,
+                                'fecha_falta'   =>"2024-03-10",
+                                'fecha_hasta'   =>"2024-03-16",
+                                'motivos'       =>"Concurso nacional",
+                                'estatus'       => "No aceptado"                
+                            ]); 
     }
 }

@@ -42,4 +42,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function alumno()
+{
+    return $this->hasOne(Alumno::class, 'id', 'alumno_id', 'user_id');
+}
 }

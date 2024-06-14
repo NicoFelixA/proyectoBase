@@ -10,11 +10,11 @@
 @stop
 
 @section('contenido')
-    <form action="{{ route('guardarJustificante') }}" method="POST">
+    <form action="{{ route('guardar') }}" method="POST">
         @csrf
         <div class="form-group">
-            <label for="">Nombre</label>
-            <input name="nombre" type="text" class="form-control">
+            <label for="nombre">Nombre</label>
+            <input name="nombre" type="text" class="form-control" value="{{ Auth::user()->name }}" readonly>
         </div>
         <div class="form-group">
             <label for="">Fecha falta</label>

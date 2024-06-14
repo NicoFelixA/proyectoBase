@@ -12,8 +12,8 @@
 @section('contenido')
     <form action="">
         <div class="form-group">
-            <label for="">Nombre</label>
-            <input type="text" class="form-control">
+            <label for="nombre">Nombre</label>
+            <input name="nombre" type="text" class="form-control" value="{{ Auth::user()->name }}" readonly>
         </div>
         <div class="form-group">
             <label for="">Hora de salida</label>

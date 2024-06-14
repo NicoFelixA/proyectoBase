@@ -1,7 +1,9 @@
+<!-- consultarpasesalumno.blade.php -->
+
 @extends('app')
 
 @section('titulo')
-    <h1>Consultar pases de salida</h1>
+    <h1>Consultar Pases de salida</h1>
 @stop
 
 @section('breadcrum')
@@ -14,42 +16,25 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Grupo</th>
                     <th>Fecha salida</th>
-                    <th>Opciones</th>
                     <th>Más</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($alumnos as $a)
-                <tr>
-                    <td>{{ $a->id }}</td>
-                    <td>{{ $a->nombre }}</td>
-                    <td>{{ $a->grupo }}</td>
-                    <td>{{ $a->fecha_salida }}</td>
-                    <td>
-                        <form action="{{ route('elemento.eliminar', $a->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <!-- Eliminar -->
-                            <button type="submit" class="btn btn-danger btn-sm">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        
-                        <!-- Aceptar -->
-                        <a href="" class="btn btn-success btn-sm">
-                            <i class="fa fa-check"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <!-- Reporte PDF -->
-                        <a href="{{ url('reporte/pdf') }}/{{ $a->id }}" class="btn btn-secondary btn-sm">
-                            <i class="far fa-file-pdf"></i>
-                        </a></form>
-                    </td>
-                </tr>
+                @foreach ($pases as $pase)
+                    <tr>
+                        <td>{{ $pase->alumno->nombre }}</td> <!-- Asegúrate de acceder correctamente a la relación -->
+                        <td>{{ $pase->alumno->grupo }}</td>
+                        <td>{{ $pase->hora_salida }}</td>
+                        <td>
+                            <!-- Reporte PDF -->
+                            <a href="{{ url('reporte/pdf') }}/{{ $pase->id }}" class="btn btn-secondary btn-sm">
+                                <i class="far fa-file-pdf"></i>
+                            </a>
+                        </td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>

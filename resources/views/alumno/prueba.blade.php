@@ -30,17 +30,12 @@
         </a>
       </div>
     </div><br><br>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-          <a href="{{ asset('administrador/consultar') }}" class="btn btn-primary btn-block rounded-pill mb-3" style="background-color:rgba(0, 0, 0, 0.705); border-color:black;">
-              Justificantes
-          </a>
+    <div class="row" style="text-align: center">
+      <div class='col-6' style="border-radius: 5px; border: 1px solid black; " onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='white'" ><a href="{{ url('/View/consultaralumno') }}" style="text-decoration: none; color:black">Justificantes</a>
+
       </div>
-      <div class="col-md-6">
-          <a href="{{ asset('administrador/consultarPases') }}" class="btn btn-primary btn-block rounded-pill mb-3" style="background-color:rgba(0, 0, 0, 0.705); border-color:black;">
-              Pases de Salida
-          </a>
-      </div>
+      <div class="col-6" style="border-radius: 5px; border: 1px solid black; " onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='white'" > <a href="{{ url('alumno/home') }}" style="text-decoration: none; color:black">Pases de Salida</a></div>
+    </div>
               </div>
         </div>
     </div>

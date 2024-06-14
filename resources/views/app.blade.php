@@ -197,13 +197,13 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="{{url('/alumno/consultaralumno')}}" class="nav-link">
+                      <a href="{{url('alumno/consultaralumno')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Consultar</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{{url('/alumno/registraralumno')}}" class="nav-link">
+                      <a href="{{url('alumno/registraralumno')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Registrar</p>
                       </a>
@@ -220,13 +220,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="{{url('/alumno/consultarpasesalumno')}}" class="nav-link">
+                        <a href="{{url('alumno/consultarpasesalumno')}}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Consultar</p>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="{{url('/alumno/registrarpasesalumno')}}" class="nav-link">
+                        <a href="{{url('alumno/registrarpasesalumno')}}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Registrar</p>
                         </a>
